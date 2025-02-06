@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Company Description Here">
+    <title>Your Company Name</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Your Brand</div>
+        <ul class="nav-links">
+            <li><a href="#company" data-translate="nav.home">Company</a></li>
+            <li><a href="#about" data-translate="nav.services">About</a></li>
+            <li><a href="#fields" data-translate="nav.about">Fields</a></li>
+            <li><a href="#invest" data-translate="nav.about">Invest</a></li>
+            <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+            <div class="language-switcher">
+                <button id="lang-en">EN</button>
+                <button id="lang-zh">中文</button>
+            </div>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 data-translate="home.title">Global Solutions</h1>
+        <p data-translate="home.description">Your description goes here.</p>
+        <button data-translate="home.cta">Contact Us</button>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Service 1</h3>
+                <p>Description of Service 1.</p>
+            </div>
+            <div class="service-item">
+                <h3>Service 2</h3>
+                <p>Description of Service 2.</p>
+            </div>
+            <div class="service-item">
+                <h3>Service 3</h3>
+                <p>Description of Service 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Your company history and mission statement goes here.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script> 
+</body>
+</html>
