@@ -5,71 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your Company Description Here">
     <title>Your Company Name</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="./styles/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Your Brand</div>
-        <ul class="nav-links">
-            <li><a href="#company" data-translate="nav.home">Company</a></li>
-            <li><a href="#about" data-translate="nav.services">About</a></li>
-            <li><a href="#fields" data-translate="nav.about">Fields</a></li>
-            <li><a href="#invest" data-translate="nav.about">Invest</a></li>
-            <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="your-logo.png" alt="Logo">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#" data-translate="nav.company">Perusahaan</a></li>
+                <li class="dropdown">
+                    <a href="#" data-translate="nav.about">Tentang Kami</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" data-translate="nav.about.profile">Profil Perusahaan</a></li>
+                        <li><a href="#" data-translate="nav.about.vision">Visi & Misi</a></li>
+                        <li><a href="#" data-translate="nav.about.team">Tim Kami</a></li>
+                        <li><a href="#" data-translate="nav.about.history">Sejarah Perusahaan</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-translate="nav.fields">Bidang</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" data-translate="nav.fields.mining">Industri Pertambangan</a></li>
+                        <li><a href="#" data-translate="nav.fields.chemical">Industri Kimia</a></li>
+                        <li><a href="#" data-translate="nav.fields.energy">Industri Energi</a></li>
+                        <li><a href="#" data-translate="nav.fields.agriculture">Industri Pertanian</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-translate="nav.invest">Investasi</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" data-translate="nav.invest.planning">Perencanaan Investasi</a></li>
+                        <li><a href="#" data-translate="nav.invest.global">Investasi Global</a></li>
+                        <li><a href="#" data-translate="nav.invest.strategy">Strategi Investasi</a></li>
+                        <li><a href="#" data-translate="nav.invest.analysis">Analisis Pasar</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-translate="nav.contact">Hubungi Kami</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" class="contact-address" data-translate="nav.contact.address">Jakarta Office: Jl. Example No.123</a></li>
+                        <li><a href="https://wa.me/6281234567890" target="_blank" class="contact-whatsapp" data-translate="nav.contact.whatsapp">+62 812-3456-7890</a></li>
+                        <li><a href="mailto:info@example.com" class="contact-email" data-translate="nav.contact.email">info@example.com</a></li>
+                        <li><a href="tel:+6281234567890" class="contact-phone" data-translate="nav.contact.phone">+62 812-3456-7890</a></li>
+                    </ul>
+                </li>
+            </ul>
+
             <div class="language-switcher">
-                <button id="lang-en">EN</button>
                 <button id="lang-zh">中文</button>
+                <button id="lang-en">EN</button>
+                <button id="lang-id">ID</button>
             </div>
-        </ul>
-    </nav>
+        </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <h1 data-translate="home.title">Global Solutions</h1>
-        <p data-translate="home.description">Your description goes here.</p>
-        <button data-translate="home.cta">Contact Us</button>
-    </section>
+    <main>
+        <section id="company" class="hero">
+            <h1 data-translate="home.title">Global Solutions</h1>
+            <p data-translate="home.description">description.</p>
+            <button data-translate="home.cta">Contact Us</button>
+        </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>Service 1</h3>
-                <p>Description of Service 1.</p>
+        <section id="fields">
+            <h2 data-translate="fields.title">Our Services</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3 data-translate="fields.service1">Service 1</h3>
+                    <p data-translate="fields.desc1">Description of Service 1.</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-translate="fields.service2">Service 2</h3>
+                    <p data-translate="fields.desc2">Description of Service 2.</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-translate="fields.service3">Service 3</h3>
+                    <p data-translate="fields.desc3">Description of Service 3.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>Service 2</h3>
-                <p>Description of Service 2.</p>
-            </div>
-            <div class="service-item">
-                <h3>Service 3</h3>
-                <p>Description of Service 3.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Your company history and mission statement goes here.</p>
-    </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>About us.</p>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name" data-translate="contact.name"></label>
+                <input type="text" id="name" name="name" required>
+                <label for="email" data-translate="contact.email"></label>
+                <input type="email" id="email" name="email" required>
+                <label for="message" data-translate="contact.message"></label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" data-translate="contact.submit">Send</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2023 Your Company Name. All rights reserved.</p>
     </footer>
 
-    <script src="app.js"></script> 
+    <script src="./scripts/app.js"></script> 
+
+    <!-- Tombol WhatsApp -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-btn" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+        Hubungi Kami di WhatsApp
+    </a>
 </body>
 </html>

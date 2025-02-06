@@ -1,0 +1,50 @@
+{
+    "nav": {
+        "company": "Perusahaan",
+        "about": "Tentang Kami",
+        "about.profile": "Profil Perusahaan",
+        "about.vision": "Visi & Misi",
+        "about.team": "Tim Kami",
+        "about.history": "Sejarah Perusahaan",
+        "fields": "Bidang",
+        "fields.mining": "Industri Pertambangan",
+        "fields.chemical": "Industri Kimia",
+        "fields.energy": "Industri Energi",
+        "fields.agriculture": "Industri Pertanian",
+        "invest": "Investasi",
+        "invest.planning": "Perencanaan Investasi",
+        "invest.global": "Investasi Global",
+        "invest.strategy": "Strategi Investasi",
+        "invest.analysis": "Analisis Pasar",
+        "contact": "Hubungi Kami",
+        "contact.address": "Kantor Jakarta: Jl. Example No.123",
+        "contact.whatsapp": "+62 812-3456-7890",
+        "contact.email": "info@example.com",
+        "contact.phone": "+62 812-3456-7890"
+    },
+    "home": {
+        "title": "Solusi Global",
+        "description": "Deskripsi perusahaan Anda di sini.",
+        "cta": "Hubungi Kami"
+    },
+    "fields": {
+        "title": "Layanan Kami",
+        "service1": "Layanan 1",
+        "service2": "Layanan 2",
+        "service3": "Layanan 3",
+        "desc1": "Deskripsi Layanan 1.",
+        "desc2": "Deskripsi Layanan 2.",
+        "desc3": "Deskripsi Layanan 3."
+    },
+    "about": {
+        "title": "Tentang Kami",
+        "content": "Sejarah perusahaan dan pernyataan misi Anda di sini."
+    },
+    "contact": {
+        "title": "Hubungi Kami",
+        "name": "Nama:",
+        "email": "Email:",
+        "message": "Pesan:",
+        "submit": "Kirim"
+    }
+}

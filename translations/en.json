@@ -1,0 +1,50 @@
+{
+    "nav": {
+        "company": "Company",
+        "about": "About Us",
+        "about.profile": "Company Profile",
+        "about.vision": "Vision & Mission",
+        "about.team": "Our Team",
+        "about.history": "Company History",
+        "fields": "Fields",
+        "fields.mining": "Mining Industry",
+        "fields.chemical": "Chemical Industry",
+        "fields.energy": "Energy Industry",
+        "fields.agriculture": "Agriculture Industry",
+        "invest": "Investment",
+        "invest.planning": "Investment Planning",
+        "invest.global": "Global Investment",
+        "invest.strategy": "Investment Strategy",
+        "invest.analysis": "Market Analysis",
+        "contact": "Contact Us",
+        "contact.address": "Jakarta Office: Jl. Example No.123",
+        "contact.whatsapp": "+62 812-3456-7890",
+        "contact.email": "info@example.com",
+        "contact.phone": "+62 812-3456-7890"
+    },
+    "home": {
+        "title": "Global Solutions",
+        "description": "Your description goes here.",
+        "cta": "Contact Us"
+    },
+    "fields": {
+        "title": "Our Services",
+        "service1": "Service 1",
+        "service2": "Service 2", 
+        "service3": "Service 3",
+        "desc1": "Description of Service 1.",
+        "desc2": "Description of Service 2.",
+        "desc3": "Description of Service 3."
+    },
+    "about": {
+        "title": "About Us",
+        "content": "Your company history and mission statement goes here."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "name": "Name:",
+        "email": "Email:",
+        "message": "Message:",
+        "submit": "Send"
+    }
+}

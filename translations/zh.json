@@ -1,0 +1,50 @@
+{
+    "nav": {
+        "company": "公司",
+        "about": "关于我们",
+        "about.profile": "公司简介",
+        "about.vision": "愿景与使命",
+        "about.team": "我们的团队",
+        "about.history": "公司历史",
+        "fields": "领域",
+        "fields.mining": "矿业",
+        "fields.chemical": "化工业",
+        "fields.energy": "能源产业",
+        "fields.agriculture": "农业",
+        "invest": "投资",
+        "invest.planning": "投资规划",
+        "invest.global": "全球投资",
+        "invest.strategy": "投资策略",
+        "invest.analysis": "市场分析",
+        "contact": "联系我们",
+        "contact.address": "雅加达办事处：Jl. Example No.123",
+        "contact.whatsapp": "+62 812-3456-7890",
+        "contact.email": "info@example.com",
+        "contact.phone": "+62 812-3456-7890"
+    },
+    "home": {
+        "title": "全球解决方案",
+        "description": "在此处填写您的公司描述。",
+        "cta": "联系我们"
+    },
+    "fields": {
+        "title": "我们的服务",
+        "service1": "服务1",
+        "service2": "服务2",
+        "service3": "服务3",
+        "desc1": "服务1的说明。",
+        "desc2": "服务2的说明。",
+        "desc3": "服务3的说明。"
+    },
+    "about": {
+        "title": "关于我们",
+        "content": "在此处填写公司历史和使命声明。"
+    },
+    "contact": {
+        "title": "联系我们",
+        "name": "姓名：",
+        "email": "电子邮件：",
+        "message": "消息：",
+        "submit": "发送"
+    }
+}
