@@ -16,11 +16,7 @@
         "invest.global": "Investasi Global",
         "invest.strategy": "Strategi Investasi",
         "invest.analysis": "Analisis Pasar",
-        "contact": "Hubungi Kami",
-        "contact.address": "Kantor Jakarta: Jl. Example No.123",
-        "contact.whatsapp": "+62 812-3456-7890",
-        "contact.email": "info@example.com",
-        "contact.phone": "+62 812-3456-7890"
+        "contact": "Hubungi Kami"
     },
     "home": {
         "title": "Solusi Global",
@@ -42,9 +38,17 @@
     },
     "contact": {
         "title": "Hubungi Kami",
-        "name": "Nama:",
-        "email": "Email:",
-        "message": "Pesan:",
-        "submit": "Kirim"
+        "whatsapp": {
+            "button": "Hubungi Kami di WhatsApp"
+        },
+        "phone": {
+            "label": "Telepon Kami"
+        },
+        "email": {
+            "label": "Email Kami"
+        },
+        "address": {
+            "label": "Kunjungi Kami"
+        }
     }
 }

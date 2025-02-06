@@ -41,10 +41,18 @@
         "content": "在此处填写公司历史和使命声明。"
     },
     "contact": {
-        "title": "联系我们",
-        "name": "姓名：",
-        "email": "电子邮件：",
-        "message": "消息：",
-        "submit": "发送"
-    }
+            "title": "联系我们",
+            "whatsapp": {
+                "button": "通过WhatsApp联系我们"
+            },
+            "phone": {
+                "label": "致电我们"
+            },
+            "email": {
+                "label": "发送邮件"
+            },
+            "address": {
+                "label": "访问我们"
+            }
+        }
 }

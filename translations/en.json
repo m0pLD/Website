@@ -41,10 +41,18 @@
         "content": "Your company history and mission statement goes here."
     },
     "contact": {
-        "title": "Contact Us",
-        "name": "Name:",
-        "email": "Email:",
-        "message": "Message:",
-        "submit": "Send"
-    }
+            "title": "Contact Us",
+            "whatsapp": {
+                "button": "Contact Us on WhatsApp"
+            },
+            "phone": {
+                "label": "Call Us"
+            },
+            "email": {
+                "label": "Email Us"
+            },
+            "address": {
+                "label": "Visit Us"
+            }
+        }
 }
