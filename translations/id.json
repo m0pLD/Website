@@ -38,8 +38,8 @@
     },
     "contact": {
         "title": "Hubungi Kami",
-        "whatsapp": {
-            "button": "Hubungi Kami di WhatsApp"
+        "address": {
+            "label": "Kunjungi Kami"
         },
         "phone": {
             "label": "Telepon Kami"
@@ -47,8 +47,8 @@
         "email": {
             "label": "Email Kami"
         },
-        "address": {
-            "label": "Kunjungi Kami"
+        "whatsapp": {
+            "button": "Hubungi Kami di WhatsApp"
         }
     }
 }
