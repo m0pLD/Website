@@ -358,14 +358,15 @@ footer {
     }
 
     .dropdown-content {
-        width: 100%;
+        position: static;
         transform: none;
         left: 0;
-        position: static;
+        width: 100%;
         box-shadow: none;
-        background: #f8f9fa;
-        padding: 10px 0;
-        margin-top: 10px;
+    }
+
+    .nav-links > li:last-child .dropdown-content {
+        right: auto;
     }
 
     .hero {
@@ -550,14 +551,15 @@ section {
     }
 
     .dropdown-content {
-        width: 100%;
+        position: static;
         transform: none;
         left: 0;
-        position: static;
+        width: 100%;
         box-shadow: none;
-        background: #f8f9fa;
-        padding: 10px 0;
-        margin-top: 10px;
+    }
+
+    .nav-links > li:last-child .dropdown-content {
+        right: auto;
     }
 
     .language-switcher {
@@ -714,5 +716,27 @@ section {
         gap: 0.5rem;
         align-items: center;
         order: 2;
+    }
+}
+
+/* Khusus untuk dropdown Hubungi Kami */
+.nav-links > li:last-child .dropdown-content {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        transform: none;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+    
+    .nav-links > li:last-child .dropdown-content {
+        right: auto;
+        transform: none;
     }
 }
