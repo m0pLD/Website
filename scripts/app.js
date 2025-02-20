@@ -75,6 +75,10 @@ document.getElementById('lang-en').addEventListener('click', (e) => changeLangua
 document.getElementById('lang-id').addEventListener('click', (e) => changeLanguage('id', e));
 document.getElementById('lang-zh').addEventListener('click', (e) => changeLanguage('zh', e));
 
+// Mobile language switcher
+document.getElementById('lang-en-mobile').addEventListener('click', (e) => changeLanguage('en', e));
+document.getElementById('lang-id-mobile').addEventListener('click', (e) => changeLanguage('id', e));
+document.getElementById('lang-zh-mobile').addEventListener('click', (e) => changeLanguage('zh', e));
 
 document.addEventListener('DOMContentLoaded', async () => {
     const defaultLang = localStorage.getItem('selectedLanguage') || 'id';
@@ -102,13 +106,6 @@ if (hamburger) {
         hamburger.classList.toggle('active');
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM Loaded');
-    const hamburger = document.querySelector('.hamburger');
-    console.log('Hamburger:', hamburger);
-});
-
 
 // Handle dropdowns on mobile
 dropdowns.forEach(dropdown => {
