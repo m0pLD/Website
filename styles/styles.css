@@ -635,9 +635,8 @@ section {
     .nav-links {
         order: 4;
         top: 100%;
-        width: 100%;
-        left: 0;
-        position: absolute;
+        width: 100vh;
+
         background: white;
         padding: 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -648,10 +647,6 @@ section {
         height: 35px;
     }
 
-    .nav-links {
-        padding: 0;
-        gap: 0;
-    }
 
     .nav-links > li {
         width: 100%;
@@ -664,27 +659,28 @@ section {
     }
 
     .dropdown-content {
-        position: static;
-        transform: scaleY(0);
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0; /* Menempel di kiri layar */
+        transform: none; /* Menghapus pergeseran ke tengah */
+        background: white;
+        min-width: 250px;
+        border-radius: 12px;
+        padding: 1rem 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 1001;
         opacity: 0;
         visibility: hidden;
-        height: 0;
-        padding: 0;
-        margin: 0;
         transition: all 0.3s ease;
-        transform-origin: top;
-        display: block;
-        width: 100%;
-        box-shadow: none;
     }
-
-    .dropdown.active .dropdown-content {
+    
+    .dropdown:hover .dropdown-content {
         opacity: 1;
         visibility: visible;
-        transform: scaleY(1);
-        height: auto;
-        padding: 1rem 0;
     }
+    
 
     .nav-links > li:last-child .dropdown-content {
         transform: scaleY(0);
