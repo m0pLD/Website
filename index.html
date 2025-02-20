@@ -7,7 +7,9 @@
     <title>Your Company Name</title>
     <link rel="stylesheet" href="./styles/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js" defer></script>
+    <!-- <style>
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -89,10 +91,10 @@
                 padding-left: 1rem;
             }
         }
-    </style>
+    </style> -->
 </head>
 <body>
-    <div class="top-bar">
+    <!-- <div class="top-bar">
         <div class="container">
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -159,14 +161,79 @@
                     <a href="#" data-translate="nav.contact">Hubungi Kami</a>
                     <ul class="dropdown-content">
                         <li><a href="#" data-translate="nav.address">Jl. Example No.123, Jakarta</a></li>
-                        <li><a href="mailto:info@example.com" data-translate="nav.email">info@example.com</a></li>
-                        <li><a href="tel:+6281234567890" data-translate="nav.phone">+62 812-3456-7890</a></li>
+                        <li><a href="mailto:info@example.com" class="nav.email">info@example.com</a></li>
+                        <li><a href="tel:+6281234567890" class="nav.phone">+62 812-3456-7890</a></li>
                         <li><a href="https://wa.me/6281234567890" target="_blank" data-translate="nav.whatsapp">+62 812-3456-7890</a></li>
                     </ul>
                 </li>
             </ul>
-        </nav>
-    </header>
+        </nav> 
+    </header> -->
+
+    <nav class="flex navbar" >
+        <!-- Div pertama (Logo) -->
+        <div class="logo">
+            <img src="public/images/logo.png" alt="Logo">
+        </div>
+        
+        <!-- Div kedua (Pilihan Bahasa & Menu) -->
+        <div class="relative">
+            <div class="flex flex-col items-end">
+                <!-- Pilihan Bahasa -->
+                <div class="language-switcher">
+                    <a href="#" id="lang-zh">中文</a> |
+                    <a href="#" id="lang-en">EN</a> |
+                    <a href="#" id="lang-id">ID</a>
+                </div>
+
+                <!-- Menu Vertikal -->
+                <ul class="nav-links">
+                    <li><a href="#" data-translate="nav.company">Perusahaan</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-translate="nav.about">Tentang Kami</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#" data-translate="nav.profile">Profil Perusahaan</a></li>
+                            <li><a href="#" data-translate="nav.vision">Visi & Misi</a></li>
+                            <li><a href="#" data-translate="nav.team">Tim Kami</a></li>
+                            <li><a href="#" data-translate="nav.history">Sejarah Perusahaan</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-translate="nav.fields">Bidang</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#" data-translate="nav.mining">Industri Pertambangan</a></li>
+                            <li><a href="#" data-translate="nav.chemical">Industri Kimia</a></li>
+                            <li><a href="#" data-translate="nav.energy">Industri Energi</a></li>
+                            <li><a href="#" data-translate="nav.agriculture">Industri Pertanian</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-translate="nav.invest">Investasi</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#" data-translate="nav.planning">Perencanaan Investasi</a></li>
+                            <li><a href="#" data-translate="nav.global">Investasi Global</a></li>
+                            <li><a href="#" data-translate="nav.strategy">Strategi Investasi</a></li>
+                            <li><a href="#" data-translate="nav.analysis">Analisis Pasar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-translate="nav.contact">Hubungi Kami</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#" data-translate="nav.address">Jl. Example No.123, Jakarta</a></li>
+                            <li><a href="mailto:info@example.com" class="nav.email">info@example.com</a></li>
+                            <li><a href="tel:+6281234567890" class="nav.phone">+62 812-3456-7890</a></li>
+                            <li><a href="https://wa.me/6281234567890" target="_blank" data-translate="nav.whatsapp">+62 812-3456-7890</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="hamburger" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
 
     <main>
         <section id="company" class="hero">
@@ -221,11 +288,11 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
         <p>&copy; 2023 Your Company Name. All rights reserved.</p>
     </footer>
-
+    
     <script src="./scripts/app.js"></script> 
     <a href="https://wa.me/6281234567890" class="whatsapp-btn" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
