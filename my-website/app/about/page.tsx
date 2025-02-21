@@ -1,8 +1,8 @@
+"use client";
 import React from "react";
 import Footer from "@/components/Footer";
 import * as framerMotion from "framer-motion";
 const { motion } = framerMotion;
-
 
 import Navbar from "@/components/Navbar";
 
@@ -43,6 +43,180 @@ const teamMembers = [
   },
 ];
 
+// Data pengalaman
+const experiences = [
+  {
+    id: 1,
+    title: "Engine and Power Generation Company",
+    icon: "⚡",
+  },
+  {
+    id: 2,
+    title: "PET Plastic Manufacturing",
+    icon: "🏭",
+  },
+  {
+    id: 3,
+    title: "PVC Manufacturing",
+    icon: "🏭",
+  },
+  {
+    id: 4,
+    title: "Thermoforming Plastic Manufacturing",
+    icon: "🏭",
+  },
+  {
+    id: 5,
+    title: "Stationery Trading and Manufacturing",
+    icon: "📝",
+  },
+  {
+    id: 6,
+    title: "General Trading Company",
+    icon: "🏢",
+  },
+  {
+    id: 7,
+    title: "Footwear Manufacturing",
+    icon: "👞",
+  },
+  {
+    id: 8,
+    title: "Holding Company",
+    icon: "🏢",
+  },
+  {
+    id: 9,
+    title: "Alloy Wheel Manufacturing",
+    icon: "🛞",
+  },
+  {
+    id: 10,
+    title: "Construction",
+    icon: "🏗️",
+  },
+  {
+    id: 11,
+    title: "Building Material Distributor",
+    icon: "🏪",
+  },
+  {
+    id: 12,
+    title: "Ink Distributor",
+    icon: "🖨️",
+  },
+  {
+    id: 13,
+    title: "School",
+    icon: "🏫",
+  },
+  {
+    id: 14,
+    title: "Flexible Packaging Manufacturing",
+    icon: "📦",
+  },
+  {
+    id: 15,
+    title: "Building Material Supermarket",
+    icon: "🏪",
+  },
+  {
+    id: 16,
+    title: "Spunbond Manufacturing",
+    icon: "🏭",
+  },
+  {
+    id: 17,
+    title: "Cigarette Distributor",
+    icon: "🚬",
+  },
+  {
+    id: 18,
+    title: "Printing Company",
+    icon: "🖨️",
+  },
+  {
+    id: 19,
+    title: "Toys Importer",
+    icon: "🧸",
+  },
+  {
+    id: 20,
+    title: "Plastic Injection Molding Manufacturing",
+    icon: "🏭",
+  },
+  {
+    id: 21,
+    title: "Coffee Manufacturing",
+    icon: "☕",
+  },
+  {
+    id: 22,
+    title: "Vehicle and Heavy Equipment Sparepart Distributor",
+    icon: "🚛",
+  },
+  {
+    id: 23,
+    title: "Cake Ingredients Distributor",
+    icon: "🍰",
+  },
+  {
+    id: 24,
+    title: "Motorcycle Distributor",
+    icon: "🏍️",
+  },
+  {
+    id: 25,
+    title: "Oil and Asphalt Distributor",
+    icon: "🛢️",
+  },
+  {
+    id: 26,
+    title: "Furniture Manufacturing and Exportir",
+    icon: "🪑",
+  },
+  {
+    id: 27,
+    title: "Wood Drying Manufacturing",
+    icon: "🪵",
+  },
+  {
+    id: 28,
+    title: "Ship Cargo Expedition Service",
+    icon: "🚢",
+  },
+  {
+    id: 29,
+    title: "Non-profit Organization (Church)",
+    icon: "⛪",
+  },
+  {
+    id: 30,
+    title: "Flour Manufacturing",
+    icon: "🌾",
+  },
+  {
+    id: 31,
+    title: "Tire Lining Manufacturing",
+    icon: "🛞",
+  },
+  {
+    id: 32,
+    title: "Bike Manufacturing",
+    icon: "🚲",
+  },
+  {
+    id: 33,
+    title: "Chemical Material Manufacturing",
+    icon: "🧪",
+  },
+  {
+    id: 34,
+    title: "Property",
+    icon: "🏢",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -50,40 +224,52 @@ export default function AboutPage() {
       <main className="flex min-h-screen flex-col">
         {/* Hero Section */}
         <section className="relative py-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-2xl mx-auto text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Tentang Kami</span>
-            </h1>
-            <p className="text-lg text-muted">
-              Membangun masa depan digital Indonesia dengan solusi teknologi
-              inovatif
-            </p>
-          </motion.div>
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-2xl mx-auto text-center mb-16"
+            >
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="gradient-text">Tentang Kami</span>
+              </h1>
+              <p className="text-lg text-muted">
+                Membangun masa depan digital Indonesia dengan solusi teknologi
+                inovatif
+              </p>
+            </motion.div>
+          </div>
         </section>
 
         {/* About Content */}
         <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 <h2 className="text-3xl font-bold mb-6">Visi Kami</h2>
                 <p className="text-lg text-muted mb-8">
                   Menjadi cahaya dan jembatan bagi kesuksesan klien kami
                 </p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <h2 className="text-3xl font-bold mb-6">Misi Kami</h2>
                 <p className="text-lg text-muted mb-8">
                   Memberikan dan menjadi Solusi Terbaik dan Lengkap untuk
                   kebutuhan akuntansi, sistem, teknologi informasi, dan
                   perpajakan Klien Kami
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -91,128 +277,89 @@ export default function AboutPage() {
         {/* Values Section */}
         <section className="py-12 bg-primary/5">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold text-center mb-12"
+            >
               Nilai-Nilai Kami
-            </h2>
+            </motion.h2>
             <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Inovasi</h3>
-                <p className="text-muted">
-                  Selalu mencari cara baru dan lebih baik dalam menyelesaikan
-                  tantangan
-                </p>
-              </div>
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Integritas</h3>
-                <p className="text-muted">
-                  Menjunjung tinggi kejujuran dan etika dalam setiap tindakan
-                </p>
-              </div>
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Kolaborasi</h3>
-                <p className="text-muted">
-                  Bekerja sama untuk mencapai hasil yang lebih baik
-                </p>
-              </div>
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Dampak</h3>
-                <p className="text-muted">
-                  Fokus pada hasil yang memberikan nilai tambah bagi stakeholder
-                </p>
-              </div>
+              {[
+                {
+                  title: "Inovasi",
+                  desc: "Selalu mencari cara baru dan lebih baik dalam menyelesaikan tantangan",
+                },
+                {
+                  title: "Integritas",
+                  desc: "Menjunjung tinggi kejujuran dan etika dalam setiap tindakan",
+                },
+                {
+                  title: "Kolaborasi",
+                  desc: "Bekerja sama untuk mencapai hasil yang lebih baik",
+                },
+                {
+                  title: "Dampak",
+                  desc: "Fokus pada hasil yang memberikan nilai tambah bagi stakeholder",
+                },
+              ].map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 bg-background/80 rounded-xl border border-foreground/10"
+                >
+                  <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
+                  <p className="text-muted">{value.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Experience Section */}
         <section className="py-20 bg-gradient-to-b from-white to-primary/5">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
-                Tim Kami
+                Pengalaman Kami
               </h2>
               <p className="text-muted text-lg max-w-2xl mx-auto">
-                Bertemu dengan para ahli yang berdedikasi untuk kesuksesan
-                proyek Anda
+                Berbagai industri yang telah kami layani dengan dedikasi dan
+                profesionalisme
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={member.id}
-                  className={`group relative p-6 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2 w-full max-w-sm ${
-                    teamMembers.length % 2 !== 0 &&
-                    index === teamMembers.length - 1
-                      ? "sm:col-span-2 lg:col-span-1"
-                      : ""
-                  }`}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {experiences.map((exp, index) => (
+                <motion.div
+                  key={exp.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="group p-6 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2"
                 >
-                  {/* Profile Image */}
-                  <div className="relative mb-6">
-                    <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
-                      {member.image && (
-                        <div className="w-full h-full bg-primary/5" />
-                      )}
-                    </div>
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-4">
-                      <div className="flex space-x-3">
-                        {/* Social Media Icons */}
-                        <a
-                          href={member.social.linkedin}
-                          className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
-                        >
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                          </svg>
-                        </a>
-                        <a
-                          href={member.social.twitter}
-                          className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
-                        >
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                          </svg>
-                        </a>
-                        <a
-                          href={`mailto:${member.social.email}`}
-                          className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
-                        >
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                        </a>
+                  <div className="flex items-center gap-4">
+                    <div className="text-4xl">{exp.icon}</div>
+                    <div className="flex-1">
+                      <div className="text-xl font-semibold">
+                        {String(exp.id).padStart(2, "0")}
                       </div>
+                      <div className="text-muted">{exp.title}</div>
                     </div>
                   </div>
-
-                  {/* Member Info */}
-                  <div className="text-center">
-                    <h3 className="text-xl font-semibold mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-muted">{member.role}</p>
-                  </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

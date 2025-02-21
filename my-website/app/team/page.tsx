@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 // Data anggota tim
 const teamMembers = [
@@ -102,111 +104,147 @@ const teamMembers = [
 ];
 
 export default function TeamPage() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40,
+  });
+
   return (
     <>
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
+        style={{ scaleX }}
+      />
       <Navbar activePage="team" />
       <main className="flex min-h-screen flex-col pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-b from-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="relative py-20"
+        >
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="container mx-auto px-4"
+          >
+            <motion.div 
+              className="max-w-2xl mx-auto text-center mb-16"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", bounce: 0.4 }}
+            >
+              <motion.h1 
+                className="text-4xl md:text-5xl font-bold mb-6"
+                whileHover={{ scale: 1.05 }}
+              >
                 <span className="gradient-text">Tim Kami</span>
-              </h1>
-              <p className="text-lg text-muted">
-                Bertemu dengan para profesional berbakat yang mendorong
-                kesuksesan perusahaan kami. Setiap anggota tim membawa keahlian
-                unik dan dedikasi untuk memberikan layanan terbaik.
-              </p>
-            </div>
-          </div>
-        </section>
+              </motion.h1>
+              <motion.p 
+                className="text-lg text-muted"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
+              >
+                Bertemu dengan para profesional berbakat yang mendorong kesuksesan
+                perusahaan kami
+              </motion.p>
+            </motion.div>
+          </motion.div>
+        </motion.section>
 
         {/* Team Grid */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
-                <div
+                <motion.div
                   key={member.id}
-                  className={`p-8 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2 w-full max-w-sm ${
-                    teamMembers.length % 2 !== 0 &&
-                    index === teamMembers.length - 1
-                      ? "md:col-span-2 lg:col-span-1"
-                      : ""
-                  }`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 300,
+                  }}
+                  whileHover={{ 
+                    scale: 1.03,
+                    rotateY: 5,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+                  }}
+                  className="group relative bg-white/50 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg border border-white/20"
                 >
-                  {/* Profile Image */}
-                  <div className="relative mb-6">
-                    <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
-                      {member.image && (
-                        <div className="w-full h-full bg-primary/5" />
-                      )}
-                    </div>
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-4">
-                      <div className="flex space-x-3">
-                        <a
-                          href={member.social.linkedin}
-                          className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
-                        >
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                          </svg>
-                        </a>
-                        <a
-                          href={member.social.twitter}
-                          className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
-                        >
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                          </svg>
-                        </a>
-                        <a
-                          href={`mailto:${member.social.email}`}
-                          className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
-                        >
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Member Image */}
+                  <motion.div 
+                    className="aspect-square relative overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5" />
+                  </motion.div>
 
                   {/* Member Info */}
-                  <div className="text-center">
-                    <h3 className="text-xl font-semibold mb-2">
+                  <motion.div 
+                    className="p-6 text-center"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <motion.h3 
+                      className="text-xl font-semibold mb-2"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {member.name}
-                    </h3>
-                    <p className="text-primary mb-3">{member.role}</p>
-                    <p className="text-muted">{member.description}</p>
-                  </div>
-                </div>
+                    </motion.h3>
+                    <motion.p 
+                      className="text-primary mb-4"
+                      whileHover={{ y: -2 }}
+                    >
+                      {member.role}
+                    </motion.p>
+
+                    {/* Social Links */}
+                    <motion.div 
+                      className="flex justify-center space-x-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      {Object.entries(member.social).map(([platform, link]) => (
+                        <motion.a
+                          key={platform}
+                          href={link}
+                          whileHover={{ scale: 1.2, rotate: 5 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="text-muted hover:text-primary transition-colors"
+                        >
+                          {platform === 'linkedin' && (
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                          )}
+                        </motion.a>
+                      ))}
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <Footer />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
+        >
+          <Footer />
+        </motion.div>
       </main>
     </>
   );
