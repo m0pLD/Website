@@ -1,47 +1,46 @@
 "use client";
 import React from "react";
 import Footer from "@/components/Footer";
-import * as framerMotion from "framer-motion";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 
 // Data anggota tim
-const teamMembers = [
-  {
-    id: 1,
-    name: "John Doe",
-    role: "CEO & Founder",
-    image: "/team/john-doe.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "john@example.com",
-    },
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    role: "CTO",
-    image: "/team/jane-smith.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "jane@example.com",
-    },
-  },
-  {
-    id: 3,
-    name: "Mike Johnson",
-    role: "Head of Design",
-    image: "/team/mike-johnson.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "mike@example.com",
-    },
-  },
-];
+// const teamMembers = [
+//   {
+//     id: 1,
+//     name: "John Doe",
+//     role: "CEO & Founder",
+//     image: "/team/john-doe.jpg",
+//     social: {
+//       linkedin: "#",
+//       twitter: "#",
+//       email: "john@example.com",
+//     },
+//   },
+//   {
+//     id: 2,
+//     name: "Jane Smith",
+//     role: "CTO",
+//     image: "/team/jane-smith.jpg",
+//     social: {
+//       linkedin: "#",
+//       twitter: "#",
+//       email: "jane@example.com",
+//     },
+//   },
+//   {
+//     id: 3,
+//     name: "Mike Johnson",
+//     role: "Head of Design",
+//     image: "/team/mike-johnson.jpg",
+//     social: {
+//       linkedin: "#",
+//       twitter: "#",
+//       email: "mike@example.com",
+//     },
+//   },
+// ];
 
 // Data pengalaman
 const experiences = [
@@ -220,23 +219,23 @@ const experiences = [
 export default function AboutPage() {
   const { t } = useLanguage();
 
-  const teamMembers = [
-    {
-      name: "John Doe",
-      role: t("about.team.ceo"),
-      image: "/path/to/image1.jpg",
-    },
-    {
-      name: "Jane Smith",
-      role: t("about.team.cto"),
-      image: "/path/to/image2.jpg",
-    },
-    {
-      name: "Mike Johnson",
-      role: t("about.team.cfo"),
-      image: "/path/to/image3.jpg",
-    },
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "John Doe",
+  //     role: t("about.team.ceo"),
+  //     image: "/path/to/image1.jpg",
+  //   },
+  //   {
+  //     name: "Jane Smith",
+  //     role: t("about.team.cto"),
+  //     image: "/path/to/image2.jpg",
+  //   },
+  //   {
+  //     name: "Mike Johnson",
+  //     role: t("about.team.cfo"),
+  //     image: "/path/to/image3.jpg",
+  //   },
+  // ];
 
   const stats = [
     {

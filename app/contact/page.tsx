@@ -7,7 +7,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactPage() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
