@@ -26,6 +26,16 @@ export default function Navbar({ activePage }: NavbarProps) {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <Link
+              href="/"
+              className={`transition-colors ${
+                activePage === "home"
+                  ? "text-primary font-semibold"
+                  : "text-foreground/80 hover:text-foreground"
+              }`}
+            >
+              Beranda
+            </Link>
+            <Link
               href="/about"
               className={`transition-colors ${
                 activePage === "about"
@@ -34,6 +44,16 @@ export default function Navbar({ activePage }: NavbarProps) {
               }`}
             >
               Tentang Kami
+            </Link>
+            <Link
+              href="/team"
+              className={`transition-colors ${
+                activePage === "team"
+                  ? "text-primary font-semibold"
+                  : "text-foreground/80 hover:text-foreground"
+              }`}
+            >
+              Tim Kami
             </Link>
             <Link
               href="/services"
@@ -46,8 +66,12 @@ export default function Navbar({ activePage }: NavbarProps) {
               Layanan
             </Link>
             <Link
-              href="#contact"
-              className="text-foreground/80 hover:text-foreground"
+              href="/contact"
+              className={`transition-colors ${
+                activePage === "contact"
+                  ? "text-primary font-semibold"
+                  : "text-foreground/80 hover:text-foreground"
+              }`}
             >
               Kontak
             </Link>
@@ -73,6 +97,16 @@ export default function Navbar({ activePage }: NavbarProps) {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
+                href="/"
+                className={`block px-3 py-2 text-base font-medium rounded-md ${
+                  activePage === "home"
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                }`}
+              >
+                Beranda
+              </Link>
+              <Link
                 href="/about"
                 className={`block px-3 py-2 text-base font-medium rounded-md ${
                   activePage === "about"
@@ -83,14 +117,32 @@ export default function Navbar({ activePage }: NavbarProps) {
                 Tentang Kami
               </Link>
               <Link
+                href="/team"
+                className={`block px-3 py-2 text-base font-medium rounded-md ${
+                  activePage === "team"
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                }`}
+              >
+                Tim Kami
+              </Link>
+              <Link
                 href="/services"
-                className="block px-3 py-2 text-base font-medium rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                className={`block px-3 py-2 text-base font-medium rounded-md ${
+                  activePage === "services"
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                }`}
               >
                 Layanan
               </Link>
               <Link
-                href="#contact"
-                className="block px-3 py-2 text-base font-medium rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                href="/contact"
+                className={`block px-3 py-2 text-base font-medium rounded-md ${
+                  activePage === "contact"
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                }`}
               >
                 Kontak
               </Link>

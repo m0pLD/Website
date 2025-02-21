@@ -1,9 +1,5 @@
 import React from "react";
 import Footer from "@/components/Footer";
-import * as framerMotion from "framer-motion";
-const { motion } = framerMotion;
-
-
 import Navbar from "@/components/Navbar";
 
 // Data anggota tim
@@ -18,6 +14,8 @@ const teamMembers = [
       twitter: "#",
       email: "john@example.com",
     },
+    description:
+      "Berpengalaman lebih dari 15 tahun dalam industri konsultan bisnis dan teknologi.",
   },
   {
     id: 2,
@@ -29,6 +27,8 @@ const teamMembers = [
       twitter: "#",
       email: "jane@example.com",
     },
+    description:
+      "Ahli dalam pengembangan solusi teknologi dan transformasi digital.",
   },
   {
     id: 3,
@@ -40,111 +40,99 @@ const teamMembers = [
       twitter: "#",
       email: "mike@example.com",
     },
+    description:
+      "Spesialis UI/UX dengan fokus pada pengalaman pengguna yang optimal.",
   },
+  {
+    id: 4,
+    name: "Sarah Wilson",
+    role: "Tax Consultant",
+    image: "/team/sarah-wilson.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "sarah@example.com",
+    },
+    description:
+      "Ahli perpajakan dengan pengalaman menangani berbagai kasus kompleks.",
+  },
+  {
+    id: 5,
+    name: "David Lee",
+    role: "Financial Advisor",
+    image: "/team/david-lee.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "david@example.com",
+    },
+    description:
+      "Konsultan keuangan berpengalaman dalam perencanaan dan analisis bisnis.",
+  },
+  {
+    id: 6,
+    name: "John Doe",
+    role: "CEO & Founder",
+    image: "/team/john-doe.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "john@example.com",
+    },
+    description:
+      "Berpengalaman lebih dari 15 tahun dalam industri konsultan bisnis dan teknologi.",
+  },
+  {
+    id: 7,
+    name: "John Doe",
+    role: "CEO & Founder",
+    image: "/team/john-doe.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "john@example.com",
+    },
+    description:
+      "Berpengalaman lebih dari 15 tahun dalam industri konsultan bisnis dan teknologi.",
+  },
+  
+  
+  
+  
 ];
 
-export default function AboutPage() {
+export default function TeamPage() {
   return (
     <>
-      <Navbar activePage="about" />
-      <main className="flex min-h-screen flex-col">
+      <Navbar activePage="team" />
+      <main className="flex min-h-screen flex-col pt-16">
         {/* Hero Section */}
-        <section className="relative py-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-2xl mx-auto text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Tentang Kami</span>
-            </h1>
-            <p className="text-lg text-muted">
-              Membangun masa depan digital Indonesia dengan solusi teknologi
-              inovatif
-            </p>
-          </motion.div>
-        </section>
-
-        {/* About Content */}
-        <section className="py-12">
+        <section className="relative py-20 bg-gradient-to-b from-primary/5">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Visi Kami</h2>
-                <p className="text-lg text-muted mb-8">
-                  Menjadi cahaya dan jembatan bagi kesuksesan klien kami
-                </p>
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Misi Kami</h2>
-                <p className="text-lg text-muted mb-8">
-                  Memberikan dan menjadi Solusi Terbaik dan Lengkap untuk
-                  kebutuhan akuntansi, sistem, teknologi informasi, dan
-                  perpajakan Klien Kami
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Values Section */}
-        <section className="py-12 bg-primary/5">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Nilai-Nilai Kami
-            </h2>
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Inovasi</h3>
-                <p className="text-muted">
-                  Selalu mencari cara baru dan lebih baik dalam menyelesaikan
-                  tantangan
-                </p>
-              </div>
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Integritas</h3>
-                <p className="text-muted">
-                  Menjunjung tinggi kejujuran dan etika dalam setiap tindakan
-                </p>
-              </div>
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Kolaborasi</h3>
-                <p className="text-muted">
-                  Bekerja sama untuk mencapai hasil yang lebih baik
-                </p>
-              </div>
-              <div className="p-6 bg-background/80 rounded-xl border border-foreground/10">
-                <h3 className="text-xl font-semibold mb-4">Dampak</h3>
-                <p className="text-muted">
-                  Fokus pada hasil yang memberikan nilai tambah bagi stakeholder
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="py-20 bg-gradient-to-b from-white to-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
-                Tim Kami
-              </h2>
-              <p className="text-muted text-lg max-w-2xl mx-auto">
-                Bertemu dengan para ahli yang berdedikasi untuk kesuksesan
-                proyek Anda
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="gradient-text">Tim Kami</span>
+              </h1>
+              <p className="text-lg text-muted">
+                Bertemu dengan para profesional berbakat yang mendorong
+                kesuksesan perusahaan kami. Setiap anggota tim membawa keahlian
+                unik dan dedikasi untuk memberikan layanan terbaik.
               </p>
             </div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        {/* Team Grid */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
               {teamMembers.map((member, index) => (
                 <div
                   key={member.id}
-                  className={`group relative p-6 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2 w-full max-w-sm ${
+                  className={`p-8 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2 w-full max-w-sm ${
                     teamMembers.length % 2 !== 0 &&
                     index === teamMembers.length - 1
-                      ? "sm:col-span-2 lg:col-span-1"
+                      ? "md:col-span-2 lg:col-span-1"
                       : ""
                   }`}
                 >
@@ -158,7 +146,6 @@ export default function AboutPage() {
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-4">
                       <div className="flex space-x-3">
-                        {/* Social Media Icons */}
                         <a
                           href={member.social.linkedin}
                           className="p-2 bg-white/20 rounded-full hover:bg-white/40 transition-colors"
@@ -210,7 +197,8 @@ export default function AboutPage() {
                     <h3 className="text-xl font-semibold mb-2">
                       {member.name}
                     </h3>
-                    <p className="text-muted">{member.role}</p>
+                    <p className="text-primary mb-3">{member.role}</p>
+                    <p className="text-muted">{member.description}</p>
                   </div>
                 </div>
               ))}
