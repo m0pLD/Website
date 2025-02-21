@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/Website', // ganti dengan nama repository GitHub Anda
-  assetPrefix: '/Website/', // ganti dengan nama repository GitHub Anda
+  basePath: '', // ganti dengan nama repository GitHub Anda
+  assetPrefix: '', // ganti dengan nama repository GitHub Anda
 }
 
 module.exports = nextConfig

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const stats = [
   { number: "10+", label: "Tahun Pengalaman", color: "from-blue-500 to-blue-700" },
@@ -36,13 +37,16 @@ export default function About() {
               Visi kami adalah menjadi mitra terpercaya dalam pengembangan bisnis
               global dengan mengedepankan inovasi dan keberlanjutan.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full font-medium shadow-lg shadow-primary/25"
-            >
-              Pelajari Lebih Lanjut
+            <Link href="/about">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full font-medium shadow-lg shadow-primary/25"
+              >
+                Pelajari Lebih Lanjut
             </motion.button>
+            </Link>
+            
           </motion.div>
 
           {/* Stats Grid */}
