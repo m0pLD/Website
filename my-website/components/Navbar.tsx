@@ -1,14 +1,21 @@
 "use client";
+import React from "react";
+import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Link from "next/link";
 
 interface NavbarProps {
-  activePage?: string;
+  activePage: string;
 }
 
 export default function Navbar({ activePage }: NavbarProps) {
+  const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleLanguageChange = () => {
+    setLanguage(language === "id" ? "en" : "id");
+  };
 
   return (
     <motion.nav
@@ -33,7 +40,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
-              Beranda
+              {t("nav.home")}
             </Link>
             <Link
               href="/about"
@@ -43,7 +50,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
-              Tentang Kami
+              {t("nav.about")}
             </Link>
             <Link
               href="/team"
@@ -53,7 +60,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
-              Tim Kami
+              {t("nav.team")}
             </Link>
             <Link
               href="/services"
@@ -63,7 +70,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
-              Layanan
+              {t("nav.services")}
             </Link>
             <Link
               href="/contact"
@@ -73,7 +80,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                   : "text-foreground/80 hover:text-foreground"
               }`}
             >
-              Kontak
+              {t("nav.contact")}
             </Link>
           </div>
 
@@ -86,6 +93,18 @@ export default function Navbar({ activePage }: NavbarProps) {
               <span className="w-full h-0.5 bg-foreground"></span>
             </div>
           </button>
+
+          <motion.div
+            className="flex items-center space-x-4"
+            whileHover={{ scale: 1.05 }}
+          >
+            <button
+              onClick={handleLanguageChange}
+              className="px-3 py-1 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
+            >
+              {language.toUpperCase()}
+            </button>
+          </motion.div>
         </div>
 
         {/* Mobile Menu */}
@@ -104,7 +123,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                     : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
-                Beranda
+                {t("nav.home")}
               </Link>
               <Link
                 href="/about"
@@ -114,7 +133,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                     : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
-                Tentang Kami
+                {t("nav.about")}
               </Link>
               <Link
                 href="/team"
@@ -124,7 +143,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                     : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
-                Tim Kami
+                {t("nav.team")}
               </Link>
               <Link
                 href="/services"
@@ -134,7 +153,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                     : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
-                Layanan
+                {t("nav.services")}
               </Link>
               <Link
                 href="/contact"
@@ -144,7 +163,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                     : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
-                Kontak
+                {t("nav.contact")}
               </Link>
             </div>
           </motion.div>

@@ -7,13 +7,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
+    stiffness: 300,
+    damping: 40,
   });
 
   const containerVariants = {
@@ -81,7 +82,7 @@ export default function Home() {
         variants={containerVariants}
       >
         <motion.div
-          variants={scaleInVariants}
+          variants={itemVariants}
           whileHover={{ scale: 1.02, rotateX: 5 }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
@@ -89,7 +90,7 @@ export default function Home() {
         </motion.div>
 
         <motion.section
-          variants={fadeInUpVariants}
+          variants={itemVariants}
           className="py-20 bg-gradient-to-b from-primary/5"
         >
           <motion.div
@@ -109,24 +110,21 @@ export default function Home() {
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="gradient-text">
-                  Selamat Datang di Website Kami
-                </span>
+                <span className="gradient-text">{t("hero.welcome")}</span>
               </motion.h2>
               <motion.p
                 className="text-lg text-muted"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
               >
-                Kami adalah partner terpercaya untuk solusi teknologi dan
-                konsultasi bisnis Anda
+                {t("hero.subtitle")}
               </motion.p>
             </motion.div>
           </motion.div>
         </motion.section>
 
         <motion.div
-          variants={fadeInUpVariants}
+          variants={itemVariants}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           whileHover={{ scale: 1.02, rotateY: 2 }}
@@ -136,7 +134,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          variants={scaleInVariants}
+          variants={itemVariants}
           whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           whileHover={{ scale: 1.02, rotateX: 2 }}
@@ -146,7 +144,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          variants={fadeInUpVariants}
+          variants={itemVariants}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           whileHover={{ scale: 1.02, rotateY: -2 }}

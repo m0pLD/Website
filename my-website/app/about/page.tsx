@@ -2,8 +2,8 @@
 import React from "react";
 import Footer from "@/components/Footer";
 import * as framerMotion from "framer-motion";
-const { motion } = framerMotion;
-
+import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 
 // Data anggota tim
@@ -218,103 +218,121 @@ const experiences = [
 ];
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
+  const teamMembers = [
+    {
+      name: "John Doe",
+      role: t("about.team.ceo"),
+      image: "/path/to/image1.jpg",
+    },
+    {
+      name: "Jane Smith",
+      role: t("about.team.cto"),
+      image: "/path/to/image2.jpg",
+    },
+    {
+      name: "Mike Johnson",
+      role: t("about.team.cfo"),
+      image: "/path/to/image3.jpg",
+    },
+  ];
+
+  const stats = [
+    {
+      number: "10+",
+      label: t("about.stats.years"),
+    },
+    {
+      number: "500+",
+      label: t("about.stats.clients"),
+    },
+    {
+      number: "95%",
+      label: t("about.stats.satisfaction"),
+    },
+    {
+      number: "24/7",
+      label: t("about.stats.support"),
+    },
+  ];
+
   return (
     <>
       <Navbar activePage="about" />
       <main className="flex min-h-screen flex-col">
         {/* Hero Section */}
-        <section className="relative py-20">
-          <div className="container mx-auto px-4">
-            <motion.div
+        <section className="relative py-20 bg-gradient-to-b from-primary/5">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="container mx-auto px-4"
+          >
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-2xl mx-auto text-center mb-16"
+              className="text-4xl md:text-5xl font-bold text-center mb-6"
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="gradient-text">Tentang Kami</span>
-              </h1>
-              <p className="text-lg text-muted">
-                Membangun masa depan digital Indonesia dengan solusi teknologi
-                inovatif
-              </p>
-            </motion.div>
-          </div>
+              <span className="gradient-text">{t("about.page.title")}</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-muted text-center max-w-3xl mx-auto"
+            >
+              {t("about.page.subtitle")}
+            </motion.p>
+          </motion.div>
         </section>
 
-        {/* About Content */}
-        <section className="py-12">
+        {/* Vision & Mission */}
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                className="bg-white/50 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/20"
               >
-                <h2 className="text-3xl font-bold mb-6">Visi Kami</h2>
-                <p className="text-lg text-muted mb-8">
-                  Menjadi cahaya dan jembatan bagi kesuksesan klien kami
-                </p>
+                <h2 className="text-2xl font-bold mb-4">
+                  {t("about.vision.title")}
+                </h2>
+                <p className="text-muted">{t("about.vision.description")}</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white/50 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/20"
               >
-                <h2 className="text-3xl font-bold mb-6">Misi Kami</h2>
-                <p className="text-lg text-muted mb-8">
-                  Memberikan dan menjadi Solusi Terbaik dan Lengkap untuk
-                  kebutuhan akuntansi, sistem, teknologi informasi, dan
-                  perpajakan Klien Kami
-                </p>
+                <h2 className="text-2xl font-bold mb-4">
+                  {t("about.mission.title")}
+                </h2>
+                <p className="text-muted">{t("about.mission.description")}</p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="py-12 bg-primary/5">
+        {/* Stats */}
+        <section className="py-20 bg-gradient-to-b from-white to-primary/5">
           <div className="container mx-auto px-4">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold text-center mb-12"
-            >
-              Nilai-Nilai Kami
-            </motion.h2>
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Inovasi",
-                  desc: "Selalu mencari cara baru dan lebih baik dalam menyelesaikan tantangan",
-                },
-                {
-                  title: "Integritas",
-                  desc: "Menjunjung tinggi kejujuran dan etika dalam setiap tindakan",
-                },
-                {
-                  title: "Kolaborasi",
-                  desc: "Bekerja sama untuk mencapai hasil yang lebih baik",
-                },
-                {
-                  title: "Dampak",
-                  desc: "Fokus pada hasil yang memberikan nilai tambah bagi stakeholder",
-                },
-              ].map((value, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
                 <motion.div
-                  key={value.title}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 bg-background/80 rounded-xl border border-foreground/10"
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center"
                 >
-                  <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                  <p className="text-muted">{value.desc}</p>
+                  <div className="text-4xl font-bold text-primary mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-muted">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -332,11 +350,10 @@ export default function AboutPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
-                Pengalaman Kami
+                {t("about.experience.title")}
               </h2>
               <p className="text-muted text-lg max-w-2xl mx-auto">
-                Berbagai industri yang telah kami layani dengan dedikasi dan
-                profesionalisme
+                {t("about.experience.subtitle")}
               </p>
             </motion.div>
 

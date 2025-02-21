@@ -1,7 +1,10 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
       {/* Background Elements */}
@@ -30,10 +33,10 @@ export default function Hero() {
             className="text-center lg:text-left"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-              Global Solutions
+              {t("hero.welcome")}
             </h1>
             <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto lg:mx-0">
-              Mitra terpercaya Anda dalam mengembangkan solusi bisnis yang inovatif dan berkelanjutan untuk masa depan yang lebih baik.
+              {t("hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <motion.button
@@ -41,14 +44,14 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full font-medium shadow-lg shadow-primary/25"
               >
-                Mulai Sekarang
+                {t("hero.start_now")}
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-white/90 text-primary border border-primary/20 rounded-full font-medium shadow-lg"
               >
-                Pelajari Lebih Lanjut
+                {t("hero.learn_more")}
               </motion.button>
             </div>
           </motion.div>
