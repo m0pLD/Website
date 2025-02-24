@@ -1,47 +1,46 @@
 "use client";
 import React from "react";
 import Footer from "@/components/Footer";
-import * as framerMotion from "framer-motion";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 
 // Data anggota tim
-const teamMembers = [
-  {
-    id: 1,
-    name: "John Doe",
-    role: "CEO & Founder",
-    image: "/team/john-doe.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "john@example.com",
-    },
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    role: "CTO",
-    image: "/team/jane-smith.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "jane@example.com",
-    },
-  },
-  {
-    id: 3,
-    name: "Mike Johnson",
-    role: "Head of Design",
-    image: "/team/mike-johnson.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "mike@example.com",
-    },
-  },
-];
+// const teamMembers = [
+//   {
+//     id: 1,
+//     name: "John Doe",
+//     role: "CEO & Founder",
+//     image: "/team/john-doe.jpg",
+//     social: {
+//       linkedin: "#",
+//       twitter: "#",
+//       email: "john@example.com",
+//     },
+//   },
+//   {
+//     id: 2,
+//     name: "Jane Smith",
+//     role: "CTO",
+//     image: "/team/jane-smith.jpg",
+//     social: {
+//       linkedin: "#",
+//       twitter: "#",
+//       email: "jane@example.com",
+//     },
+//   },
+//   {
+//     id: 3,
+//     name: "Mike Johnson",
+//     role: "Head of Design",
+//     image: "/team/mike-johnson.jpg",
+//     social: {
+//       linkedin: "#",
+//       twitter: "#",
+//       email: "mike@example.com",
+//     },
+//   },
+// ];
 
 // Data pengalaman
 const experiences = [
@@ -220,23 +219,23 @@ const experiences = [
 export default function AboutPage() {
   const { t } = useLanguage();
 
-  const teamMembers = [
-    {
-      name: "John Doe",
-      role: t("about.team.ceo"),
-      image: "/path/to/image1.jpg",
-    },
-    {
-      name: "Jane Smith",
-      role: t("about.team.cto"),
-      image: "/path/to/image2.jpg",
-    },
-    {
-      name: "Mike Johnson",
-      role: t("about.team.cfo"),
-      image: "/path/to/image3.jpg",
-    },
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "John Doe",
+  //     role: t("about.team.ceo"),
+  //     image: "/path/to/image1.jpg",
+  //   },
+  //   {
+  //     name: "Jane Smith",
+  //     role: t("about.team.cto"),
+  //     image: "/path/to/image2.jpg",
+  //   },
+  //   {
+  //     name: "Mike Johnson",
+  //     role: t("about.team.cfo"),
+  //     image: "/path/to/image3.jpg",
+  //   },
+  // ];
 
   const stats = [
     {
@@ -266,19 +265,21 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
             className="container mx-auto px-4"
           >
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="text-4xl md:text-5xl font-bold text-center mb-6"
             >
               <span className="gradient-text">{t("about.page.title")}</span>
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg text-muted text-center max-w-3xl mx-auto"
             >
               {t("about.page.subtitle")}
@@ -291,9 +292,9 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 className="bg-white/50 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/20"
               >
                 <h2 className="text-2xl font-bold mb-4">
@@ -302,9 +303,9 @@ export default function AboutPage() {
                 <p className="text-muted">{t("about.vision.description")}</p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 className="bg-white/50 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/20"
               >
                 <h2 className="text-2xl font-bold mb-4">
@@ -323,10 +324,9 @@ export default function AboutPage() {
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
                   className="text-center"
                 >
                   <div className="text-4xl font-bold text-primary mb-2">
@@ -343,10 +343,9 @@ export default function AboutPage() {
         <section className="py-20 bg-gradient-to-b from-white to-primary/5">
           <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
@@ -361,10 +360,9 @@ export default function AboutPage() {
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 1 + index * 0.05 }}
                   className="group p-6 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2"
                 >
                   <div className="flex items-center gap-4">
@@ -382,7 +380,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <Footer />
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+        >
+          <Footer />
+        </motion.div>
       </main>
     </>
   );

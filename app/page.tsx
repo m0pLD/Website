@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0, rotate: -5 },
+    hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -42,31 +42,31 @@ export default function Home() {
     },
   };
 
-  const fadeInUpVariants = {
-    hidden: { y: 30, opacity: 0, scale: 0.9 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        duration: 1,
-      },
-    },
-  };
+  // const fadeInUpVariants = {
+  //   hidden: { y: 30, opacity: 0, scale: 0.9 },
+  //   visible: {
+  //     y: 0,
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: {
+  //       type: "spring",
+  //       duration: 1,
+  //     },
+  //   },
+  // };
 
-  const scaleInVariants = {
-    hidden: { scale: 0.9, opacity: 0, rotateX: -15 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        duration: 0.8,
-      },
-    },
-  };
+  // const scaleInVariants = {
+  //   hidden: { scale: 0.9, opacity: 0, rotateX: -15 },
+  //   visible: {
+  //     scale: 1,
+  //     opacity: 1,
+  //     rotateX: 0,
+  //     transition: {
+  //       type: "spring",
+  //       duration: 0.8,
+  //     },
+  //   },
+  // };
 
   return (
     <>
@@ -83,7 +83,7 @@ export default function Home() {
       >
         <motion.div
           variants={itemVariants}
-          whileHover={{ scale: 1.02, rotateX: 5 }}
+          whileHover={{ scale: 1.02, rotateX: 0 }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
           <Hero />
@@ -102,7 +102,7 @@ export default function Home() {
           >
             <motion.div
               className="max-w-3xl mx-auto text-center"
-              whileHover={{ scale: 1.02, rotateY: 5 }}
+              whileHover={{ scale: 1.02, rotateY: 0 }}
               transition={{ type: "spring", bounce: 0.4 }}
             >
               <motion.h2
@@ -127,7 +127,7 @@ export default function Home() {
           variants={itemVariants}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          whileHover={{ scale: 1.02, rotateY: 2 }}
+          whileHover={{ scale: 1.02, rotateY: 0 }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
           <About />
@@ -147,7 +147,7 @@ export default function Home() {
           variants={itemVariants}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          whileHover={{ scale: 1.02, rotateY: -2 }}
+          whileHover={{ scale: 1.02, rotateY: 0 }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
           <Contact />
@@ -158,7 +158,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          whileHover={{ scale: 1.02, rotate: 1 }}
+          whileHover={{ scale: 1.02, rotate: 0 }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
           <Footer />

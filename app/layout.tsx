@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={geist.className}>
         <LanguageProvider>
-          <Navbar />
+          {/* Menghapus Navbar dari layout karena setiap page sudah memiliki Navbar dengan activePage yang sesuai */}
           {children}
         </LanguageProvider>
       </body>

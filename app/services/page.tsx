@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useRouter } from "next/navigation";
 
 // Data layanan
 const services = {
@@ -55,7 +56,8 @@ const services = {
 };
 
 export default function ServicesPage() {
-  const { t, language, setLanguage } = useLanguage();
+  const { t, language } = useLanguage();
+  const router = useRouter();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -78,32 +80,49 @@ export default function ServicesPage() {
           transition={{ duration: 0.6 }}
           className="relative py-20 bg-gradient-to-b from-primary/5"
         >
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="container mx-auto px-4"
-          >
+          <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.h1
-                className="text-4xl md:text-5xl font-bold mb-6"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", bounce: 0.4 }}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.4,
+                }}
               >
-                <span className="gradient-text">
-                  {t("services.page.title")}
-                </span>
-              </motion.h1>
+                <motion.h1
+                  className="text-4xl md:text-5xl font-bold mb-6"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
+                    bounce: 0.4,
+                  }}
+                >
+                  <motion.span
+                    className="gradient-text inline-block"
+                    whileHover={{
+                      scale: 1.05,
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    {t("services.page.title")}
+                  </motion.span>
+                </motion.h1>
+              </motion.div>
+
               <motion.p
                 className="text-lg text-muted"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
               >
                 {t("services.page.subtitle")}
               </motion.p>
             </div>
-          </motion.div>
+          </div>
         </motion.section>
 
         {/* Services Grid */}
@@ -113,22 +132,17 @@ export default function ServicesPage() {
               {services[language].map((service, index) => (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.5,
-                    delay: index * 0.1,
-                    type: "spring",
-                    bounce: 0.4,
+                    delay: index * 0.2,
                   }}
                   whileHover={{
-                    scale: 1.05,
-                    rotateY: 5,
-                    boxShadow:
-                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
                   }}
-                  className={`p-8 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 w-full max-w-xl ${
+                  className={`p-8 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 w-full max-w-xl ${
                     services[language].length % 2 !== 0 &&
                     index === services[language].length - 1
                       ? "md:col-span-2 md:max-w-xl"
@@ -150,8 +164,12 @@ export default function ServicesPage() {
                   </motion.h3>
                   <motion.p
                     className="text-muted"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ 
+                      delay: index * 0.2 + 0.3,
+                      duration: 0.5 
+                    }}
                   >
                     {t(`services.${service.id}.description`)}
                   </motion.p>
@@ -161,10 +179,12 @@ export default function ServicesPage() {
                       .map((item, idx) => (
                         <motion.li
                           key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: idx * 0.1 }}
+                          initial={{ opacity: 0, x: 10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ 
+                            delay: index * 0.2 + idx * 0.1 + 0.5,
+                            duration: 0.3 
+                          }}
                           className="flex items-start space-x-2"
                         >
                           <span className="text-primary">•</span>
@@ -182,27 +202,39 @@ export default function ServicesPage() {
         <section className="py-20 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6 text-center">
+              <motion.h2 
+                className="text-3xl font-bold mb-6 text-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 {t("services.approach.title")}
-              </h2>
-              <p className="text-muted mb-6">
+              </motion.h2>
+              <motion.p 
+                className="text-muted mb-6"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
                 {t("services.approach.description1")}
-              </p>
-              <p className="text-muted">
+              </motion.p>
+              <motion.p 
+                className="text-muted"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
                 {t("services.approach.description2")}
-              </p>
+              </motion.p>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <Contact />
-
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
         >
           <Footer />
         </motion.div>

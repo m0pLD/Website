@@ -7,7 +7,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactPage() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -27,47 +27,77 @@ export default function ContactPage() {
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.6 }}
           className="relative py-20 bg-gradient-to-b from-primary/5"
         >
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-            className="container mx-auto px-4"
-          >
-            <motion.div
-              className="max-w-3xl mx-auto text-center"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", bounce: 0.4, duration: 0.2 }}
-            >
-              <motion.h1
-                className="text-4xl md:text-5xl font-bold mb-6"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.4,
+                }}
               >
-                <span className="gradient-text">{t("contact.hero.title")}</span>
-              </motion.h1>
+                <motion.h1
+                  className="text-4xl md:text-5xl font-bold mb-6"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
+                    bounce: 0.4,
+                  }}
+                >
+                  <motion.span
+                    className="gradient-text inline-block"
+                    whileHover={{
+                      scale: 1.05,
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    {t("contact.hero.title")}
+                  </motion.span>
+                </motion.h1>
+              </motion.div>
+
               <motion.p
                 className="text-lg text-muted"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.4 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
               >
                 {t("contact.hero.subtitle")}
               </motion.p>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </motion.section>
 
         {/* Contact Section */}
-        <Contact />
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            delay: 0.4, 
+            duration: 0.5,
+            type: "spring",
+            bounce: 0.2
+          }}
+        >
+          <Contact />
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            delay: 0.6, 
+            duration: 0.5,
+            type: "spring",
+            bounce: 0.2
+          }}
         >
           <Footer />
         </motion.div>
