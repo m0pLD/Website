@@ -79,11 +79,11 @@ export default function ContactPage() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            delay: 0.4, 
+          transition={{
+            delay: 0.4,
             duration: 0.5,
             type: "spring",
-            bounce: 0.2
+            bounce: 0.2,
           }}
         >
           <Contact />
@@ -92,11 +92,11 @@ export default function ContactPage() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            delay: 0.6, 
+          transition={{
+            delay: 0.6,
             duration: 0.5,
             type: "spring",
-            bounce: 0.2
+            bounce: 0.2,
           }}
         >
           <Footer />

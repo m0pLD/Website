@@ -166,9 +166,9 @@ export default function ServicesPage() {
                     className="text-muted"
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ 
+                    transition={{
                       delay: index * 0.2 + 0.3,
-                      duration: 0.5 
+                      duration: 0.5,
                     }}
                   >
                     {t(`services.${service.id}.description`)}
@@ -181,9 +181,9 @@ export default function ServicesPage() {
                           key={idx}
                           initial={{ opacity: 0, x: 10 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ 
+                          transition={{
                             delay: index * 0.2 + idx * 0.1 + 0.5,
-                            duration: 0.3 
+                            duration: 0.3,
                           }}
                           className="flex items-start space-x-2"
                         >
@@ -202,7 +202,7 @@ export default function ServicesPage() {
         <section className="py-20 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <motion.h2 
+              <motion.h2
                 className="text-3xl font-bold mb-6 text-center"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export default function ServicesPage() {
               >
                 {t("services.approach.title")}
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-muted mb-6"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -218,7 +218,7 @@ export default function ServicesPage() {
               >
                 {t("services.approach.description1")}
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-muted"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
