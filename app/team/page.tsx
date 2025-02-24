@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion, useScroll, useSpring } from "framer-motion";
@@ -10,89 +10,53 @@ import Image from "next/image";
 const teamMembers = [
   {
     id: 1,
-    name: "John Doe",
-    role: "team.role.ceo",
-    image: "/images/Foto.jpg",
+    name: "Liem Sian Liong",
+    image: "/images/Liem Sian Liong.png",
+    description:
+      "Berpengalaman dalam konsultasi pajak, teknologi informasi, dan implementasi sistem terpadu. Saat ini, ia adalah Partner di KAP Hananta Budianto (Anggota Independen UHY) dan memegang berbagai sertifikasi, termasuk CPA, CMA, Brevet C, Chartered Accountant, ASEAN CPA, serta sertifikasi di jaringan, valuasi bisnis, dan investigasi.",
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "john@example.com",
+      email: "liem@example.com",
     },
   },
   {
     id: 2,
-    name: "Jane Smith",
-    role: "team.role.cto",
-    image: "/images/team/member2.jpg",
+    name: "Budi Selamet Hartono",
+    image: "/images/budi selamet hartono.png",
+    description:
+      "A certified Tax Consultant and former Deloitte public accountant with extensive experience in tax, audit, and financial statement compilation. Holds a Registered Tax Consultant (Certificate B License).",
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "jane@example.com",
+      email: "liem@example.com",
     },
   },
   {
     id: 3,
-    name: "Mike Johnson",
-    role: "team.role.design",
-    image: "/team/member3.jpg",
+    name: "Soebyantoro",
+    image: "/images/soebyantoro.png",
+    description:
+      "A certified Tax Consultant and former Deloitte public accountant with extensive experience in tax, audit, and financial statement compilation. Holds a Registered Tax Consultant (Certificate B License).",
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "mike@example.com",
+      email: "liem@example.com",
     },
   },
   {
     id: 4,
-    name: "Sarah Wilson",
-    role: "Tax Consultant",
-    image: "/team/sarah-wilson.jpg",
+    name: "Soebyantoro",
+    image: "/images/soebyantoro.png",
+    description:
+      "A certified Tax Consultant and former Deloitte public accountant with extensive experience in tax, audit, and financial statement compilation. Holds a Registered Tax Consultant (Certificate B License).",
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "sarah@example.com",
+      email: "liem@example.com",
     },
-    description:
-      "Ahli perpajakan dengan pengalaman menangani berbagai kasus kompleks.",
   },
-  {
-    id: 5,
-    name: "David Lee",
-    role: "Financial Advisor",
-    image: "/team/david-lee.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "david@example.com",
-    },
-    description:
-      "Konsultan keuangan berpengalaman dalam perencanaan dan analisis bisnis.",
-  },
-  {
-    id: 6,
-    name: "John Doe",
-    role: "CEO & Founder",
-    image: "/team/john-doe.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "john@example.com",
-    },
-    description:
-      "Berpengalaman lebih dari 15 tahun dalam industri konsultan bisnis dan teknologi.",
-  },
-  {
-    id: 7,
-    name: "John Doe",
-    role: "CEO & Founder",
-    image: "/team/john-doe.jpg",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "john@example.com",
-    },
-    description:
-      "Berpengalaman lebih dari 15 tahun dalam industri konsultan bisnis dan teknologi.",
-  },
+  
 ];
 
 export default function TeamPage() {
@@ -102,6 +66,9 @@ export default function TeamPage() {
     stiffness: 300,
     damping: 40,
   });
+
+  // State untuk tracking expanded description
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   return (
     <>
@@ -188,18 +155,74 @@ export default function TeamPage() {
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ delay: index * 0.1 + 0.3 }}
                     >
-                      <h3 className="text-2xl font-bold mb-1 group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {member.name}
                       </h3>
-                      <p className="text-white/80 text-lg mb-3">
-                        {t(member.role)}
-                      </p>
-                      <p className="text-sm text-white/70 mb-4 line-clamp-2">
-                        {member.description}
+                      <p className="text-white/90 text-lg mb-3 font-medium">
+                        {member.role}
                       </p>
 
+                      {/* Description with View More */}
+                      <div className="relative">
+                        <p
+                          className={`text-sm text-white/80 leading-relaxed ${
+                            expandedId === member.id ? "" : "line-clamp-3"
+                          }`}
+                        >
+                          {member.description}
+                        </p>
+
+                        {/* View More Button */}
+                        <motion.button
+                          onClick={() =>
+                            setExpandedId(
+                              expandedId === member.id ? null : member.id
+                            )
+                          }
+                          className="text-primary text-sm font-medium mt-2 hover:text-primary/80 transition-colors flex items-center gap-1"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          {expandedId === member.id ? (
+                            <>
+                              View Less
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M5 15l7-7 7 7"
+                                />
+                              </svg>
+                            </>
+                          ) : (
+                            <>
+                              View More
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            </>
+                          )}
+                        </motion.button>
+                      </div>
+
                       {/* Social Links */}
-                      <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-4 mt-4">
                         {Object.entries(member.social).map(
                           ([platform, link]) => (
                             <motion.a
