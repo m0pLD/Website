@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -81,47 +82,9 @@ export default function Home() {
         animate="visible"
         variants={containerVariants}
       >
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ scale: 1.02, rotateX: 0 }}
-          transition={{ type: "spring", bounce: 0.4 }}
-        >
+        <motion.div variants={itemVariants}>
           <Hero />
         </motion.div>
-
-        <motion.section
-          variants={itemVariants}
-          className="py-20 bg-gradient-to-b from-primary/5"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, type: "spring" }}
-            className="container mx-auto px-4"
-          >
-            <motion.div
-              className="max-w-3xl mx-auto text-center"
-              whileHover={{ scale: 1.02, rotateY: 0 }}
-              transition={{ type: "spring", bounce: 0.4 }}
-            >
-              <motion.h2
-                className="text-3xl md:text-4xl font-bold mb-6"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-              >
-                <span className="gradient-text">{t("hero.welcome")}</span>
-              </motion.h2>
-              <motion.p
-                className="text-lg text-muted"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-              >
-                {t("hero.subtitle")}
-              </motion.p>
-            </motion.div>
-          </motion.div>
-        </motion.section>
 
         <motion.div
           variants={itemVariants}
@@ -141,6 +104,15 @@ export default function Home() {
           transition={{ type: "spring", bounce: 0.4 }}
         >
           <Services />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.4 }}
+        >
+          <WhyChooseUs />
         </motion.div>
 
         <motion.div
