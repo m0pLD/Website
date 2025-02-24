@@ -13,7 +13,7 @@ const teamMembers = [
     name: "Liem Sian Liong",
     image: "/images/Liem Sian Liong.png",
     description:
-      "Berpengalaman dalam konsultasi pajak, teknologi informasi, dan implementasi sistem terpadu. Saat ini, ia adalah Partner di KAP Hananta Budianto (Anggota Independen UHY) dan memegang berbagai sertifikasi, termasuk CPA, CMA, Brevet C, Chartered Accountant, ASEAN CPA, serta sertifikasi di jaringan, valuasi bisnis, dan investigasi.",
+      "Experienced in tax consulting, information technology, and integrated system implementation. Currently, he is a Partner at KAP Hananta Budianto (An Independent Member of UHY) and holds various certifications, including CPA, CMA, Brevet C, Chartered Accountant, ASEAN CPA, as well as certifications in networking, business valuation, and investigation.",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -37,7 +37,7 @@ const teamMembers = [
     name: "Soebyantoro",
     image: "/images/soebyantoro.png",
     description:
-      "A certified Tax Consultant and former Deloitte public accountant with extensive experience in tax, audit, and financial statement compilation. Holds a Registered Tax Consultant (Certificate B License).",
+      "Specialized in costing and financial statement compilation with experience in public companies, as well as expertise in information technology and taxation. Holds a Registered Tax Consultant (Certificate A License).",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -45,18 +45,113 @@ const teamMembers = [
     },
   },
   {
-    id: 4,
-    name: "Soebyantoro",
-    image: "/images/soebyantoro.png",
+    id: 5,
+    name: "Diana Kurnia",
+    image: "/images/diana kurnia.png",
     description:
-      "A certified Tax Consultant and former Deloitte public accountant with extensive experience in tax, audit, and financial statement compilation. Holds a Registered Tax Consultant (Certificate B License).",
+      "A certified public accountant and former Ernst & Young auditor with extensive experience in financial statement compilation, auditing, and internal audits. She has a strong background in financial compliance and risk assessment. Currently, she is a Partner at KAP Hananta Budianto (An Independent Member of UHY).",
     social: {
       linkedin: "#",
       twitter: "#",
       email: "liem@example.com",
     },
   },
-  
+  {
+    id: 6,
+    name: "Hendro Susilo",
+    image: "/images/hendro susilo.png",
+    description:
+      "A registered accountant and MBA with extensive experience in consulting, specializing in ISO, management accounting, general consulting, and integrated system implementation. He is also skilled in Initial Public Offering (IPO) and human resource development.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 7,
+    name: "Chuie Linda",
+    image: "/images/chuie linda.png",
+    description:
+      "Specialized in information technology, information system and networking. She is also skilled system implementation from Malaysian software.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 8,
+    name: "Siti Nurasiah",
+    image: "/images/siti nurasiah.png",
+    description:
+      "Specialized in costing and financial statements compilation and having experience public company. She is also skilled taxation.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 9,
+    name: "Irna Natalia",
+    image: "/images/irna natalia.png",
+    description:
+      "Specialized in costing and financial statements compilation. She is also skilled system implementation from Malaysian software.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 10,
+    name: "Yenny",
+    image: "/images/yenny.png",
+    description:
+      "Specialized in information technology, information system and networking. She is also skilled system implementation from Malaysian software.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 11,
+    name: "Andrian",
+    image: "/images/andrian.png",
+    description:
+      "Specialized in information technology, information system and networking. He is also skilled system implementation from Malaysian software.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 12,
+    name: "Merianawati Sinatra",
+    image: "/images/merianawati sinatra.png",
+    description:
+      "Specialized in Managing and optimizing the prices charged for goods, services, and intellectual property transferred between different entities within a multinational corporation. Ensure compliance with international tax regulations and guidelines to minimize tax liabilities while maintaining arm’s length principles.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
+  {
+    id: 13,
+    name: "Arin Avila",
+    image: "/images/arin avila.png",
+    description:
+      "Specialized in analyzing financial information and preparing reports to guide management in making strategic business decisions . Focus on budgeting, cost management, performance evaluation, and financial forecasting to help improve operational efficiency and profitability. Supporting insight for the organization in achieving its financial goals effectively.",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "liem@example.com",
+    },
+  },
 ];
 
 export default function TeamPage() {
@@ -102,20 +197,6 @@ export default function TeamPage() {
         {/* Team Members Grid */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl font-bold mb-4 gradient-text">
-                {t("team.leadership.title")}
-              </h2>
-              <p className="text-muted max-w-2xl mx-auto">
-                {t("team.leadership.subtitle")}
-              </p>
-            </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
@@ -158,9 +239,6 @@ export default function TeamPage() {
                       <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {member.name}
                       </h3>
-                      <p className="text-white/90 text-lg mb-3 font-medium">
-                        {member.role}
-                      </p>
 
                       {/* Description with View More */}
                       <div className="relative">
