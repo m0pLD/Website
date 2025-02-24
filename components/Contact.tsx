@@ -72,6 +72,39 @@ const contactInfo = [
   },
 ];
 
+const socialButtons = [
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/6281234567890",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+      </svg>
+    ),
+    color: "bg-green-500 hover:bg-green-600",
+  },
+  {
+    name: "WeChat",
+    href: "weixin://dl/chat?{your_wechat_id}",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.49.49 0 0 1 .176-.553C23.241 18.416 24 16.73 24 14.899c0-3.09-2.75-5.91-7.062-6.041zm-1.161 2.459a.97.97 0 0 1 .968.983.97.97 0 0 1-.968.983.97.97 0 0 1-.969-.983.97.97 0 0 1 .969-.983zm4.844 0a.97.97 0 0 1 .969.983.97.97 0 0 1-.969.983.97.97 0 0 1-.968-.983.97.97 0 0 1 .968-.983z" />
+      </svg>
+    ),
+    color: "bg-green-600 hover:bg-green-700",
+  },
+  {
+    name: "Email",
+    href: "mailto:info@example.com",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    color: "bg-blue-500 hover:bg-blue-600",
+  },
+];
+
 interface FormErrors {
   name?: string;
   email?: string;
@@ -83,6 +116,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -149,6 +183,25 @@ export default function Contact() {
     }
   };
 
+  const createWhatsAppLink = () => {
+    const message = `Nama: ${formData.name}%0A
+Email: ${formData.email}%0A
+Subjek: ${formData.subject}%0A
+Pesan: ${formData.message}`;
+    return `https://wa.me/6281234567890?text=${message}`;
+  };
+
+  const createWeChatLink = () => {
+    // Sesuaikan dengan ID WeChat Anda
+    return `weixin://dl/chat?{your_wechat_id}`;
+  };
+
+  const createEmailLink = () => {
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(`Nama: ${formData.name}\nEmail: ${formData.email}\nPesan: ${formData.message}`);
+    return `mailto:info@example.com?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = (type: "email" | "whatsapp") => {
     if (isSubmitting) return;
     setIsSubmitting(true);
@@ -187,158 +240,173 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <motion.div
-        className="absolute inset-0 overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="absolute -right-1/4 top-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute -left-1/4 bottom-0 w-1/2 h-1/2 bg-secondary/5 rounded-full blur-3xl" />
-      </motion.div>
+    <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-50 to-green-50">
+      {/* Background Decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -right-1/4 top-0 w-1/2 h-1/2 bg-blue-100/30 rounded-full blur-3xl" />
+        <div className="absolute -left-1/4 bottom-0 w-1/2 h-1/2 bg-green-100/30 rounded-full blur-3xl" />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="gradient-text">{t("contact.title")}</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
+            Mari Berbicara
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
-            {t("contact.subtitle")}
+          <p className="text-gray-600 text-lg">
+            Kami siap membantu mewujudkan visi Anda. Hubungi kami untuk konsultasi.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <motion.div
+        {/* Social Media Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-lg mx-auto mb-12"
+        >
+          <div className="grid grid-cols-3 gap-4">
+            {socialButtons.map((button, index) => (
+              <motion.a
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.05,
-                  duration: 0.3,
-                  type: "spring",
-                  stiffness: 300,
-                }}
-                whileHover={{ scale: 1.02, rotateY: 2 }}
-                className="group relative p-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/50"
+                href={button.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`${button.color} text-white rounded-xl py-4 px-6 flex items-center justify-center space-x-3 shadow-lg transition-all duration-300`}
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${info.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
-                />
-                <div className="relative z-10 flex items-center space-x-4">
-                  <div
-                    className={`p-3 bg-gradient-to-br ${info.gradient} text-white rounded-xl`}
-                  >
-                    {info.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">
-                      {t(info.title)}
-                    </h3>
-                    <p className="text-muted">{t(info.content)}</p>
-                  </div>
-                </div>
-              </motion.div>
+                {button.icon}
+                <span className="font-medium">{button.name}</span>
+              </motion.a>
             ))}
           </div>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Contact Info Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="lg:col-span-1 space-y-6"
+          >
+            {/* Alamat Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="flex items-center space-x-4">
+                <div className="bg-blue-100 p-3 rounded-xl">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-1 text-gray-900">Kantor Pusat</h3>
+                  <p className="text-gray-600">Jl. Example No.123, Jakarta</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="flex items-center space-x-4">
+                <div className="bg-green-100 p-3 rounded-xl">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-1 text-gray-900">Email</h3>
+                  <a href="mailto:info@example.com" className="text-blue-600 hover:underline">
+                    info@example.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="flex items-center space-x-4">
+                <div className="bg-purple-100 p-3 rounded-xl">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-1 text-gray-900">Telepon</h3>
+                  <a href="tel:+6281234567890" className="text-blue-600 hover:underline">
+                    +62 812-3456-7890
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-            className="relative p-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/50"
+            className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
           >
-            <h3 className="text-2xl font-bold mb-6">
-              {t("contact.form.title")}
-            </h3>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Nama Lengkap
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
               <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("contact.form.name.label")}
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Subjek
                 </label>
                 <input
                   type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder={t("contact.form.name.placeholder")}
-                  className={`w-full px-4 py-3 rounded-xl ${
-                    errors.name ? "border-red-500" : "border-gray-200"
-                  }`}
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Bagaimana kami dapat membantu?"
                 />
-                {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{t(errors.name)}</p>
-                )}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("contact.form.email.label")}
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder={t("contact.form.email.placeholder")}
-                  className={`w-full px-4 py-3 rounded-xl ${
-                    errors.email ? "border-red-500" : "border-gray-200"
-                  }`}
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{t(errors.email)}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("contact.form.message.label")}
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Pesan
                 </label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder={t("contact.form.message.placeholder")}
                   rows={4}
-                  className={`w-full px-4 py-3 rounded-xl ${
-                    errors.message ? "border-red-500" : "border-gray-200"
-                  }`}
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Tuliskan pesan Anda di sini..."
                 />
-                {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {t(errors.message)}
-                  </p>
-                )}
-                <p className="text-sm text-muted mt-1">
-                  {formData.message.length}/500 {t("contact.form.characters")}
-                </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex justify-end space-x-4">
                 <motion.button
-                  onClick={() => handleSubmit("email")}
-                  disabled={isSubmitting}
-                  className="flex-1 btn btn-primary"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
-                  {isSubmitting
-                    ? t("contact.form.submit.sending")
-                    : t("contact.form.submit.email")}
-                </motion.button>
-                <motion.button
-                  onClick={() => handleSubmit("whatsapp")}
-                  disabled={isSubmitting}
-                  className="flex-1 btn btn-whatsapp"
-                >
-                  {t("contact.form.submit.whatsapp")}
+                  Kirim Pesan
                 </motion.button>
               </div>
             </form>
