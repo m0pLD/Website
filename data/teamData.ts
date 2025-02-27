@@ -97,7 +97,7 @@ export const teamMembers = [
   },
   {
     id: 10,
-    name: "Yenny",
+    name: "YennyS",
     image: "/images/team/yenny.png",
     description:
       "Specialized in information technology, information system and networking. She is also skilled system implementation from Malaysian software.",
