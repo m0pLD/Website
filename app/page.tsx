@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Location from "@/components/Location";
 import OurTeam from "@/components/OurTeam";
 import JoinCompanies from "@/components/JoinCompanies";
+import OurExperience from "@/components/OurExperience";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -68,6 +69,15 @@ export default function Home() {
           transition={{ type: "spring", bounce: 0.4 }}
         >
           <WhyChooseUs />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.4 }}
+        >
+          <OurExperience />
         </motion.div>
 
         <motion.div

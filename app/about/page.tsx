@@ -340,7 +340,7 @@ export default function AboutPage() {
         </section>
 
         {/* Experience Section */}
-        <section className="py-20 bg-gradient-to-b from-white to-primary/5">
+        <section id="experience" className="py-20 scroll-mt-20">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
