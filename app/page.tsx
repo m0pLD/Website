@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Location from "@/components/Location";
+import OurTeam from "@/components/OurTeam";
+import JoinCompanies from "@/components/JoinCompanies";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -43,32 +44,6 @@ export default function Home() {
     },
   };
 
-  // const fadeInUpVariants = {
-  //   hidden: { y: 30, opacity: 0, scale: 0.9 },
-  //   visible: {
-  //     y: 0,
-  //     opacity: 1,
-  //     scale: 1,
-  //     transition: {
-  //       type: "spring",
-  //       duration: 1,
-  //     },
-  //   },
-  // };
-
-  // const scaleInVariants = {
-  //   hidden: { scale: 0.9, opacity: 0, rotateX: -15 },
-  //   visible: {
-  //     scale: 1,
-  //     opacity: 1,
-  //     rotateX: 0,
-  //     transition: {
-  //       type: "spring",
-  //       duration: 0.8,
-  //     },
-  //   },
-  // };
-
   return (
     <>
       <motion.div
@@ -90,20 +65,9 @@ export default function Home() {
           variants={itemVariants}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          whileHover={{ scale: 1.02, rotateY: 0 }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
-          <About />
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          whileHover={{ scale: 1.02, rotateX: 2 }}
-          transition={{ type: "spring", bounce: 0.4 }}
-        >
-          <Services />
+          <WhyChooseUs />
         </motion.div>
 
         <motion.div
@@ -112,7 +76,25 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
-          <WhyChooseUs />
+          <OurTeam />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.4 }}
+        >
+          <JoinCompanies />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.4 }}
+        >
+          <Location />
         </motion.div>
 
         <motion.div
