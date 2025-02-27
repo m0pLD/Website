@@ -48,7 +48,14 @@ export default function OurTeam() {
                   src={member.image}
                   alt={member.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  priority={index < 3}
+                  onError={(e) => {
+                    // Fallback ke gambar default jika gambar tidak ditemukan
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/images/team/default-avatar.png";
+                  }}
                 />
               </motion.div>
 
