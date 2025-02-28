@@ -9,6 +9,7 @@ import Location from "@/components/Location";
 import OurTeam from "@/components/OurTeam";
 import JoinCompanies from "@/components/JoinCompanies";
 import OurExperience from "@/components/OurExperience";
+import VisionMission from "@/components/VisionMission";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -32,17 +33,8 @@ export default function Home() {
   };
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-      },
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -77,6 +69,15 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
+          <OurTeam />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.4 }}
+        >
           <OurExperience />
         </motion.div>
 
@@ -86,7 +87,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
-          <OurTeam />
+          <VisionMission />
         </motion.div>
 
         <motion.div

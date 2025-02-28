@@ -147,6 +147,8 @@ const translations = {
     "team.join.subtitle":
       "Jadilah bagian dari perjalanan kami dalam membangun masa depan",
     "team.join.button": "Lihat Lowongan",
+    "team.button.viewMore": "Lihat Selengkapnya",
+    "team.button.viewLess": "Lihat Lebih Sedikit",
 
     // Team Roles
     "team.role.ceo": "CEO & Founder",
@@ -220,6 +222,87 @@ const translations = {
       "Pendekatan kami dalam perencanaan pajak bersifat multi-yurisdiksi dan mencakup seluruh spektrum pajak langsung, tidak langsung dan pajak pribadi. Kami, bersama dengan firma anggota lainnya yang tersebar di seluruh dunia, memberikan saran perpajakan nasional dan internasional yang berorientasi bisnis dan berkualitas.",
     "services.approach.description2":
       "Tim kami terdiri dari profesional yang sangat terlatih dan berpengalaman. Kombinasi keahlian lini layanan dan paparan internasional, bersama dengan pelatihan lanjutan yang berkelanjutan, membekali mereka untuk bekerja dengan klien kami dan menjadi penasihat tepercaya mereka.",
+
+    // Vision & Mission
+    "home.vision.title": "Visi & Misi",
+    "home.vision.subtitle":
+      "Komitmen kami untuk pelayanan yang unggul dan profesional",
+    "home.vision.heading": "Visi Kami",
+    "home.vision.description":
+      "Menjadi perusahaan jasa profesional terkemuka yang membantu klien mencapai tujuan bisnis mereka melalui solusi inovatif dan layanan yang luar biasa.",
+    "home.mission.heading": "Misi Kami",
+    "home.mission.description":
+      "Memberikan layanan profesional berkualitas tinggi yang menciptakan nilai bagi klien kami dengan memahami kebutuhan mereka dan memberikan solusi inovatif dengan integritas dan keunggulan.",
+
+    // Team Section
+    "home.team.title": "Tim Kami",
+    "home.team.subtitle":
+      "Temui tim profesional berpengalaman kami yang berdedikasi untuk memberikan layanan terbaik",
+    "home.team.viewAll": "Lihat Semua Anggota Tim",
+
+    // Experience Section
+    "home.experience.title": "Pengalaman Kami",
+    "home.experience.subtitle":
+      "Dengan pengalaman bertahun-tahun di berbagai industri, kami menyediakan layanan komprehensif yang disesuaikan untuk memenuhi kebutuhan bisnis Anda",
+
+    // Join Companies
+    "home.join.title": "Bergabung dengan 100+ Perusahaan yang Berkembang",
+    "home.join.description":
+      "Kami menyediakan layanan pajak dan konsultasi, baik secara individual maupun terpadu, memberikan layanan multi-disiplin yang konsisten secara global dan kemampuan berdasarkan pengetahuan industri yang luas, untuk semua klien nasional dan internasional kami.",
+    "home.join.cta": "Mulai Sekarang",
+
+    // Location
+    "home.location.title": "Lokasi Kantor",
+    "home.location.subtitle": "Temukan kantor kami di seluruh Indonesia",
+
+    // Why Choose Us Section
+    "home.whyChooseUs.title": "Mengapa Memilih Kami",
+    "home.whyChooseUs.subtitle":
+      "Kami membuat klien kami puas dengan memberikan layanan terbaik",
+    "home.whyChooseUs.description":
+      "Kami menyediakan layanan pajak dan konsultasi, baik secara individual maupun terpadu, memberikan layanan multi-disiplin yang konsisten secara global dan kemampuan berdasarkan pengetahuan industri yang luas, untuk semua klien nasional dan internasional kami.",
+    "home.whyChooseUs.description2":
+      "Kami merespons tantangan bisnis kompleks klien kami dengan pendekatan global untuk layanan yang mencakup sektor industri dan batas nasional. Kemampuan global dan konsistensi adalah inti dari cara kami bekerja.",
+    "home.whyChooseUs.image1.alt": "Layanan Profesional",
+    "home.whyChooseUs.image2.alt": "Tim Ahli",
+    "home.whyChooseUs.image3.alt": "Jangkauan Global",
+
+    // Team Descriptions
+    "team.member.liem-sian-liong.description":
+      "Berpengalaman dalam konsultasi pajak, teknologi informasi, dan implementasi sistem terintegrasi. Saat ini, beliau adalah Partner di KAP Hananta Budianto (Anggota Independen UHY) dan memegang berbagai sertifikasi, termasuk CPA, CMA, Brevet C, Chartered Accountant, ASEAN CPA, serta sertifikasi dalam jaringan, penilaian bisnis, dan investigasi.",
+
+    "team.member.budi-selamet.description":
+      "Konsultan Pajak tersertifikasi dan mantan akuntan publik Deloitte dengan pengalaman luas dalam pajak, audit, dan penyusunan laporan keuangan. Memegang Konsultan Pajak Terdaftar (Sertifikat Izin B).",
+
+    "team.member.soebyantoro.description":
+      "Ahli dalam perhitungan biaya dan penyusunan laporan keuangan dengan pengalaman di perusahaan publik, serta keahlian dalam teknologi informasi dan perpajakan. Memegang Konsultan Pajak Terdaftar (Sertifikat Izin A).",
+
+    "team.member.diana-kurnia.description":
+      "Akuntan publik tersertifikasi dan mantan auditor Ernst & Young dengan pengalaman luas dalam penyusunan laporan keuangan, audit, dan audit internal. Beliau memiliki latar belakang yang kuat dalam kepatuhan keuangan dan penilaian risiko. Saat ini, beliau adalah Partner di KAP Hananta Budianto (Anggota Independen UHY).",
+
+    "team.member.hendro-susilo.description":
+      "Akuntan terdaftar dan pemegang MBA dengan pengalaman luas dalam konsultasi, khususnya ISO, akuntansi manajemen, konsultasi umum, dan implementasi sistem terintegrasi. Beliau juga ahli dalam Penawaran Umum Perdana (IPO) dan pengembangan sumber daya manusia.",
+
+    "team.member.chuie-linda.description":
+      "Ahli dalam teknologi informasi, sistem informasi dan jaringan. Beliau juga berpengalaman dalam implementasi sistem dari perangkat lunak Malaysia.",
+
+    "team.member.siti-nurasiah.description":
+      "Ahli dalam perhitungan biaya dan penyusunan laporan keuangan serta memiliki pengalaman di perusahaan publik. Beliau juga memiliki keahlian dalam perpajakan.",
+
+    "team.member.irna-natalia.description":
+      "Ahli dalam perhitungan biaya dan penyusunan laporan keuangan. Beliau juga berpengalaman dalam implementasi sistem dari perangkat lunak Malaysia.",
+
+    "team.member.yenny.description":
+      "Ahli dalam teknologi informasi, sistem informasi dan jaringan. Beliau juga berpengalaman dalam implementasi sistem dari perangkat lunak Malaysia.",
+
+    "team.member.andrian.description":
+      "Ahli dalam teknologi informasi, sistem informasi dan jaringan. Beliau juga berpengalaman dalam implementasi sistem dari perangkat lunak Malaysia.",
+
+    "team.member.merianawati.description":
+      "Spesialis dalam mengelola dan mengoptimalkan harga yang dikenakan untuk barang, jasa, dan kekayaan intelektual yang ditransfer antar entitas dalam perusahaan multinasional. Memastikan kepatuhan terhadap peraturan dan pedoman pajak internasional untuk meminimalkan kewajiban pajak sambil mempertahankan prinsip kewajaran.",
+
+    "team.member.arin.description":
+      "Spesialis dalam menganalisis informasi keuangan dan menyiapkan laporan untuk memandu manajemen dalam membuat keputusan bisnis strategis. Fokus pada penganggaran, manajemen biaya, evaluasi kinerja, dan peramalan keuangan untuk membantu meningkatkan efisiensi operasional dan profitabilitas. Memberikan wawasan untuk organisasi dalam mencapai tujuan keuangannya secara efektif.",
   },
   en: {
     // Navbar
@@ -353,6 +436,8 @@ const translations = {
     "team.join.title": "Join Our Team",
     "team.join.subtitle": "Be part of our journey in building the future",
     "team.join.button": "View Openings",
+    "team.button.viewMore": "View More",
+    "team.button.viewLess": "View Less",
 
     // Team Roles
     "team.role.ceo": "CEO & Founder",
@@ -425,6 +510,87 @@ const translations = {
       "Our approach to tax planning is multi-jurisdictional and covers the entire spectrum of direct, indirect and personal taxes. Together with our member firms worldwide, we provide business-oriented and quality national and international tax advice.",
     "services.approach.description2":
       "Our team consists of highly trained and experienced professionals. The combination of service line expertise and international exposure, along with continuous advanced training, equips them to work with our clients and be their trusted advisors.",
+
+    // Vision & Mission
+    "home.vision.title": "Vision & Mission",
+    "home.vision.subtitle":
+      "Our commitment to excellence and professional service",
+    "home.vision.heading": "Our Vision",
+    "home.vision.description":
+      "To be the leading professional services firm that helps clients achieve their business objectives through innovative solutions and exceptional service.",
+    "home.mission.heading": "Our Mission",
+    "home.mission.description":
+      "To provide high-quality professional services that create value for our clients by understanding their needs and delivering innovative solutions with integrity and excellence.",
+
+    // Team Section
+    "home.team.title": "Our Team",
+    "home.team.subtitle":
+      "Meet our experienced team of professionals dedicated to providing the best service",
+    "home.team.viewAll": "View All Team Members",
+
+    // Experience Section
+    "home.experience.title": "Our Experience",
+    "home.experience.subtitle":
+      "With years of experience in various industries, we provide comprehensive services tailored to meet your business needs",
+
+    // Join Companies
+    "home.join.title": "Join with 100+ Growing Companies",
+    "home.join.description":
+      "We provide tax and Advisory services, individually or on a combined basis, delivering globally consistent multi-disciplinary skills and capabilities, based on extensive industry knowledge, to all of our national and international clients.",
+    "home.join.cta": "Get Started Now",
+
+    // Location
+    "home.location.title": "Office Location",
+    "home.location.subtitle": "Find our offices across Indonesia",
+
+    // Why Choose Us Section
+    "home.whyChooseUs.title": "Why Choose Us",
+    "home.whyChooseUs.subtitle":
+      "We make our customers happy by giving best services",
+    "home.whyChooseUs.description":
+      "We provide tax and advisory services, individually or on a combined basis, delivering globally consistent multi-disciplinary skills and capabilities, based on extensive industry knowledge, to all of our national and international clients.",
+    "home.whyChooseUs.description2":
+      "We respond to our clients' complex business challenges with a global approach to services that spans industry sectors and national boundaries. Global capability and consistency are central to the way we work.",
+    "home.whyChooseUs.image1.alt": "Professional Service",
+    "home.whyChooseUs.image2.alt": "Expert Team",
+    "home.whyChooseUs.image3.alt": "Global Reach",
+
+    // Team Descriptions
+    "team.member.liem-sian-liong.description":
+      "Experienced in tax consulting, information technology, and integrated system implementation. Currently, he is a Partner at KAP Hananta Budianto (UHY Independent Member) and holds various certifications, including CPA, CMA, Brevet C, Chartered Accountant, ASEAN CPA, as well as certifications in networking, business valuation, and investigation.",
+
+    "team.member.budi-selamet.description":
+      "Certified Tax Consultant and former Deloitte public accountant with extensive experience in taxation, auditing, and financial statement preparation. Holds Registered Tax Consultant (License Certificate B).",
+
+    "team.member.soebyantoro.description":
+      "Expert in cost calculation and financial statement preparation with experience in public companies, as well as expertise in information technology and taxation. Holds Registered Tax Consultant (License Certificate A).",
+
+    "team.member.diana-kurnia.description":
+      "Certified public accountant and former Ernst & Young auditor with extensive experience in financial statement preparation, auditing, and internal audit. She has a strong background in financial compliance and risk assessment. Currently, she is a Partner at KAP Hananta Budianto (UHY Independent Member).",
+
+    "team.member.hendro-susilo.description":
+      "Registered accountant and MBA holder with extensive experience in consulting, particularly ISO, management accounting, general consulting, and integrated system implementation. He is also expert in Initial Public Offering (IPO) and human resource development.",
+
+    "team.member.chuie-linda.description":
+      "Expert in information technology, information systems and networking. She is also experienced in system implementation from Malaysian software.",
+
+    "team.member.siti-nurasiah.description":
+      "Expert in cost calculation and financial statement preparation with experience in public companies. She also has expertise in taxation.",
+
+    "team.member.irna-natalia.description":
+      "Expert in cost calculation and financial statement preparation. She is also experienced in system implementation from Malaysian software.",
+
+    "team.member.yenny.description":
+      "Specialized in information technology, information system and networking. She is also skilled in system implementation from Malaysian software.",
+
+    "team.member.andrian.description":
+      "Specialized in information technology, information system and networking. He is also skilled in system implementation from Malaysian software.",
+
+    "team.member.merianawati.description":
+      "Specialized in Managing and optimizing the prices charged for goods, services, and intellectual property transferred between different entities within a multinational corporation. Ensure compliance with international tax regulations and guidelines to minimize tax liabilities while maintaining arm's length principles.",
+
+    "team.member.arin.description":
+      "Specialized in analyzing financial information and preparing reports to guide management in making strategic business decisions. Focus on budgeting, cost management, performance evaluation, and financial forecasting to help improve operational efficiency and profitability. Supporting insight for the organization in achieving its financial goals effectively.",
   },
 };
 

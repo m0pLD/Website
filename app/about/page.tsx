@@ -5,6 +5,14 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 
+// Tambahkan interface untuk experience
+interface Experience {
+  id: number;
+  title: string;
+  icon: string;
+  items?: string[]; // items bersifat opsional
+}
+
 // Data anggota tim
 // const teamMembers = [
 //   {
@@ -43,26 +51,58 @@ import Navbar from "@/components/Navbar";
 // ];
 
 // Data pengalaman
-const experiences = [
+const experiences: Experience[] = [
   {
     id: 1,
-    title: "Engine and Power Generation Company",
-    icon: "⚡",
+    title: "Industri Pertambangan",
+    icon: "⛏️",
+    items: [
+      "Tambang Batubara",
+      "Tambang Emas",
+      "Tambang Nikel",
+      "Tambang Mineral",
+      "Jasa Pertambangan",
+      "Kontraktor Pertambangan",
+    ],
   },
   {
     id: 2,
-    title: "PET Plastic Manufacturing",
-    icon: "🏭",
+    title: "Industri Kimia",
+    icon: "🧪",
+    items: [
+      "Petrokimia",
+      "Kimia Dasar",
+      "Plastik & Kemasan",
+      "Cat & Coating",
+      "Pupuk & Pestisida",
+      "Oleokimia",
+    ],
   },
   {
     id: 3,
-    title: "PVC Manufacturing",
-    icon: "🏭",
+    title: "Industri Energi",
+    icon: "⚡",
+    items: [
+      "Pembangkit Listrik",
+      "Minyak & Gas",
+      "Energi Terbarukan",
+      "Distribusi Energi",
+      "Transmisi Listrik",
+      "Kontraktor Power Plant",
+    ],
   },
   {
     id: 4,
-    title: "Thermoforming Plastic Manufacturing",
-    icon: "🏭",
+    title: "Industri Pertanian",
+    icon: "🌾",
+    items: [
+      "Perkebunan",
+      "Agribisnis",
+      "Pengolahan Hasil Pertanian",
+      "Peternakan",
+      "Perikanan",
+      "Industri Pangan",
+    ],
   },
   {
     id: 5,
@@ -352,11 +392,11 @@ export default function AboutPage() {
                 {t("about.experience.title")}
               </h2>
               <p className="text-muted text-lg max-w-2xl mx-auto">
-                {t("about.experience.subtitle")}
+                Pengalaman kami melayani berbagai sektor industri di Indonesia
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.id}
@@ -365,15 +405,35 @@ export default function AboutPage() {
                   transition={{ duration: 0.3, delay: 1 + index * 0.05 }}
                   className="group p-6 bg-white/50 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="text-4xl">{exp.icon}</div>
-                    <div className="flex-1">
-                      <div className="text-xl font-semibold">
-                        {String(exp.id).padStart(2, "0")}
-                      </div>
-                      <div className="text-muted">{exp.title}</div>
-                    </div>
+                    <h3 className="text-xl font-semibold">{exp.title}</h3>
                   </div>
+                  {exp.items && exp.items.length > 0 && (
+                    <ul className="space-y-2 ml-4">
+                      {exp.items.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-muted"
+                        >
+                          <svg
+                            className="w-4 h-4 text-primary flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </motion.div>
               ))}
             </div>

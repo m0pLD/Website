@@ -6,18 +6,23 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full aspect-video mt-20">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 z-10"></div>
-        {/* Video Container dengan aspect ratio yang konsisten */}
-        <div className="relative w-full h-full">
+    <section className="relative w-full h-[100vh]">
+      {/* Video Background Container */}
+      <div className="absolute inset-0">
+        <div className="relative h-full w-full overflow-hidden">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute h-full w-full object-cover md:object-fill"
+            style={{
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
+              minWidth: "100%",
+              minHeight: "100%",
+            }}
             poster="/images/video-poster.jpg"
           >
             <source src="/videos/LD-VideoHome.mp4" type="video/mp4" />
@@ -26,7 +31,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator - Sembunyikan di mobile */}
+      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

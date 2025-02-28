@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import FloatingContact from "@/components/FloatingContact";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -22,8 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={geist.className}>
         <LanguageProvider>
-          {/* Menghapus Navbar dari layout karena setiap page sudah memiliki Navbar dengan activePage yang sesuai */}
           {children}
+          <FloatingContact />
         </LanguageProvider>
       </body>
     </html>

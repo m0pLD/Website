@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
             <div className="relative h-[250px] rounded-2xl overflow-hidden">
               <Image
                 src="/images/about-01.png"
-                alt="Professional Service"
+                alt={t("home.whyChooseUs.image1.alt")}
                 fill
                 className="object-cover"
               />
@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
             <div className="relative h-[250px] rounded-2xl overflow-hidden">
               <Image
                 src="/images/about-02.png"
-                alt="Expert Team"
+                alt={t("home.whyChooseUs.image2.alt")}
                 fill
                 className="object-cover"
               />
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
             <div className="relative h-[520px] rounded-2xl overflow-hidden">
               <Image
                 src="/images/about-03.png"
-                alt="Global Reach"
+                alt={t("home.whyChooseUs.image3.alt")}
                 fill
                 className="object-cover"
               />
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Why Choose Us
+              {t("home.whyChooseUs.title")}
             </motion.h2>
 
             <motion.p
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              We make our customers happy by giving best services.
+              {t("home.whyChooseUs.subtitle")}
             </motion.p>
 
             <motion.p
@@ -89,10 +89,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              We provide tax and advisory services, individually or on a
-              combined basis, delivering globally consistent multi-disciplinary
-              skills and capabilities, based on extensive industry knowledge, to
-              all of our national and international clients.
+              {t("home.whyChooseUs.description")}
             </motion.p>
 
             <motion.p
@@ -102,10 +99,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              We respond to our clients' complex business challenges with a
-              global approach to services that spans industry sectors and
-              national boundaries. Global capability and consistency are central
-              to the way we work.
+              {t("home.whyChooseUs.description2")}
             </motion.p>
           </motion.div>
         </div>

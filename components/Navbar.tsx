@@ -100,7 +100,7 @@ export default function Navbar({ activePage }: NavbarProps) {
           >
             <button
               onClick={handleLanguageChange}
-              className="px-3 py-1 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
+              className="px-3 py-1 rounded-md bg-primary/10 hover:bg-primary/20"
             >
               {language.toUpperCase()}
             </button>
