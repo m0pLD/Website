@@ -36,8 +36,27 @@ const experiences = [
 export default function OurExperience() {
   const { t } = useLanguage();
 
+  const stats = [
+    {
+      number: t("experience.stats.years"),
+      label: t("experience.years"),
+    },
+    {
+      number: t("experience.stats.clients"),
+      label: t("experience.clients"),
+    },
+    {
+      number: t("experience.stats.projects"),
+      label: t("experience.projects"),
+    },
+    {
+      number: t("experience.stats.experts"),
+      label: t("experience.experts"),
+    },
+  ];
+
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-b from-white to-primary/5">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,13 +66,30 @@ export default function OurExperience() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Our Experience
+            {t("experience.title")}
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
-            With years of experience in various industries, we provide
-            comprehensive services tailored to meet your business needs.
+            {t("experience.subtitle")}
           </p>
         </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="text-center"
+            >
+              <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {stat.number}
+              </h3>
+              <p className="text-muted">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {experiences.map((category, index) => (

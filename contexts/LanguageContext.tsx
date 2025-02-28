@@ -241,9 +241,16 @@ const translations = {
     "home.team.viewAll": "Lihat Semua Anggota Tim",
 
     // Experience Section
-    "home.experience.title": "Pengalaman Kami",
-    "home.experience.subtitle":
-      "Dengan pengalaman bertahun-tahun di berbagai industri, kami menyediakan layanan komprehensif yang disesuaikan untuk memenuhi kebutuhan bisnis Anda",
+    "experience.title": "Pengalaman Kami",
+    "experience.subtitle": "Dengan pengalaman bertahun-tahun di berbagai industri, kami menyediakan layanan komprehensif yang disesuaikan untuk memenuhi kebutuhan bisnis Anda",
+    "experience.years": "Tahun",
+    "experience.clients": "Klien",
+    "experience.projects": "Proyek",
+    "experience.experts": "Ahli",
+    "experience.stats.years": "15+",
+    "experience.stats.clients": "100+",
+    "experience.stats.projects": "500+",
+    "experience.stats.experts": "20+",
 
     // Join Companies
     "home.join.title": "Bergabung dengan 100+ Perusahaan yang Berkembang",
@@ -529,9 +536,16 @@ const translations = {
     "home.team.viewAll": "View All Team Members",
 
     // Experience Section
-    "home.experience.title": "Our Experience",
-    "home.experience.subtitle":
-      "With years of experience in various industries, we provide comprehensive services tailored to meet your business needs",
+    "experience.title": "Our Experience",
+    "experience.subtitle": "With years of experience in various industries, we provide comprehensive services tailored to meet your business needs",
+    "experience.years": "Years",
+    "experience.clients": "Clients",
+    "experience.projects": "Projects",
+    "experience.experts": "Experts",
+    "experience.stats.years": "15+",
+    "experience.stats.clients": "100+",
+    "experience.stats.projects": "500+",
+    "experience.stats.experts": "20+",
 
     // Join Companies
     "home.join.title": "Join with 100+ Growing Companies",
