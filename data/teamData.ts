@@ -92,7 +92,7 @@ export const getTeamMembers = (t: (key: string) => string) => [
   {
     id: 10,
     name: "Yenny",
-    image: "/images/team/yenny.png",
+    image: "/images/team/andrian.png",
     description:t("team.member.yenny.description"),
     social: {
       linkedin: "#",
