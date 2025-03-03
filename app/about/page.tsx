@@ -50,214 +50,214 @@ interface Experience {
 //   },
 // ];
 
-// Data pengalaman
-const experiences: Experience[] = [
-  {
-    id: 1,
-    title: "Industri Pertambangan",
-    icon: "⛏️",
-    items: [
-      "Tambang Batubara",
-      "Tambang Emas",
-      "Tambang Nikel",
-      "Tambang Mineral",
-      "Jasa Pertambangan",
-      "Kontraktor Pertambangan",
-    ],
-  },
-  {
-    id: 2,
-    title: "Industri Kimia",
-    icon: "🧪",
-    items: [
-      "Petrokimia",
-      "Kimia Dasar",
-      "Plastik & Kemasan",
-      "Cat & Coating",
-      "Pupuk & Pestisida",
-      "Oleokimia",
-    ],
-  },
-  {
-    id: 3,
-    title: "Industri Energi",
-    icon: "⚡",
-    items: [
-      "Pembangkit Listrik",
-      "Minyak & Gas",
-      "Energi Terbarukan",
-      "Distribusi Energi",
-      "Transmisi Listrik",
-      "Kontraktor Power Plant",
-    ],
-  },
-  {
-    id: 4,
-    title: "Industri Pertanian",
-    icon: "🌾",
-    items: [
-      "Perkebunan",
-      "Agribisnis",
-      "Pengolahan Hasil Pertanian",
-      "Peternakan",
-      "Perikanan",
-      "Industri Pangan",
-    ],
-  },
-  {
-    id: 5,
-    title: "Stationery Trading and Manufacturing",
-    icon: "📝",
-  },
-  {
-    id: 6,
-    title: "General Trading Company",
-    icon: "🏢",
-  },
-  {
-    id: 7,
-    title: "Footwear Manufacturing",
-    icon: "👞",
-  },
-  {
-    id: 8,
-    title: "Holding Company",
-    icon: "🏢",
-  },
-  {
-    id: 9,
-    title: "Alloy Wheel Manufacturing",
-    icon: "🛞",
-  },
-  {
-    id: 10,
-    title: "Construction",
-    icon: "🏗️",
-  },
-  {
-    id: 11,
-    title: "Building Material Distributor",
-    icon: "🏪",
-  },
-  {
-    id: 12,
-    title: "Ink Distributor",
-    icon: "🖨️",
-  },
-  {
-    id: 13,
-    title: "School",
-    icon: "🏫",
-  },
-  {
-    id: 14,
-    title: "Flexible Packaging Manufacturing",
-    icon: "📦",
-  },
-  {
-    id: 15,
-    title: "Building Material Supermarket",
-    icon: "🏪",
-  },
-  {
-    id: 16,
-    title: "Spunbond Manufacturing",
-    icon: "🏭",
-  },
-  {
-    id: 17,
-    title: "Cigarette Distributor",
-    icon: "🚬",
-  },
-  {
-    id: 18,
-    title: "Printing Company",
-    icon: "🖨️",
-  },
-  {
-    id: 19,
-    title: "Toys Importer",
-    icon: "🧸",
-  },
-  {
-    id: 20,
-    title: "Plastic Injection Molding Manufacturing",
-    icon: "🏭",
-  },
-  {
-    id: 21,
-    title: "Coffee Manufacturing",
-    icon: "☕",
-  },
-  {
-    id: 22,
-    title: "Vehicle and Heavy Equipment Sparepart Distributor",
-    icon: "🚛",
-  },
-  {
-    id: 23,
-    title: "Cake Ingredients Distributor",
-    icon: "🍰",
-  },
-  {
-    id: 24,
-    title: "Motorcycle Distributor",
-    icon: "🏍️",
-  },
-  {
-    id: 25,
-    title: "Oil and Asphalt Distributor",
-    icon: "🛢️",
-  },
-  {
-    id: 26,
-    title: "Furniture Manufacturing and Exportir",
-    icon: "🪑",
-  },
-  {
-    id: 27,
-    title: "Wood Drying Manufacturing",
-    icon: "🪵",
-  },
-  {
-    id: 28,
-    title: "Ship Cargo Expedition Service",
-    icon: "🚢",
-  },
-  {
-    id: 29,
-    title: "Non-profit Organization (Church)",
-    icon: "⛪",
-  },
-  {
-    id: 30,
-    title: "Flour Manufacturing",
-    icon: "🌾",
-  },
-  {
-    id: 31,
-    title: "Tire Lining Manufacturing",
-    icon: "🛞",
-  },
-  {
-    id: 32,
-    title: "Bike Manufacturing",
-    icon: "🚲",
-  },
-  {
-    id: 33,
-    title: "Chemical Material Manufacturing",
-    icon: "🧪",
-  },
-  {
-    id: 34,
-    title: "Property",
-    icon: "🏢",
-  },
-];
-
 export default function AboutPage() {
   const { t } = useLanguage();
+
+  // Pindahkan array experiences ke dalam komponen
+  const experiences: Experience[] = [
+    {
+      id: 1,
+      title: t("industry.mining.title"),
+      icon: "⛏️",
+      items: [
+        t("industry.mining.items.coal"),
+        t("industry.mining.items.gold"),
+        t("industry.mining.items.nickel"),
+        t("industry.mining.items.mineral"),
+        t("industry.mining.items.service"),
+        t("industry.mining.items.contractor"),
+      ],
+    },
+    {
+      id: 2,
+      title: t("industry.chemical.title"),
+      icon: "🧪",
+      items: [
+        t("industry.chemical.items.petrochemical"),
+        t("industry.chemical.items.basic"),
+        t("industry.chemical.items.plastic"),
+        t("industry.chemical.items.paint"),
+        t("industry.chemical.items.fertilizer"),
+        t("industry.chemical.items.oleochemical"),
+      ],
+    },
+    {
+      id: 3,
+      title: t("industry.energy.title"),
+      icon: "⚡",
+      items: [
+        t("industry.energy.items.powerplant"),
+        t("industry.energy.items.oil"),
+        t("industry.energy.items.renewable"),
+        t("industry.energy.items.distribution"),
+        t("industry.energy.items.transmission"),
+        t("industry.energy.items.contractor"),
+      ],
+    },
+    {
+      id: 4,
+      title: t("industry.agriculture.title"),
+      icon: "🌾",
+      items: [
+        t("industry.agriculture.items.plantation"),
+        t("industry.agriculture.items.agribusiness"),
+        t("industry.agriculture.items.processing"),
+        t("industry.agriculture.items.farm"),
+        t("industry.agriculture.items.fishery"),
+        t("industry.agriculture.items.food"),
+      ],
+    },
+    {
+      id: 5,
+      title: t("industry.stationery.title"),
+      icon: "📝",
+    },
+    {
+      id: 6,
+      title: t("industry.trading.title"),
+      icon: "🏢",
+    },
+    {
+      id: 7,
+      title: t("industry.footwear.title"),
+      icon: "👞",
+    },
+    {
+      id: 8,
+      title: t("industry.holding.title"),
+      icon: "🏢",
+    },
+    {
+      id: 9,
+      title: t("industry.alloy.title"),
+      icon: "🛞",
+    },
+    {
+      id: 10,
+      title: t("industry.construction.title"),
+      icon: "🏗️",
+    },
+    {
+      id: 11,
+      title: t("industry.building.title"),
+      icon: "🏪",
+    },
+    {
+      id: 12,
+      title: t("industry.ink.title"),
+      icon: "🖨️",
+    },
+    {
+      id: 13,
+      title: t("industry.school.title"),
+      icon: "🏫",
+    },
+    {
+      id: 14,
+      title: t("industry.packaging.title"),
+      icon: "📦",
+    },
+    {
+      id: 15,
+      title: t("industry.supermarket.title"),
+      icon: "🏪",
+    },
+    {
+      id: 16,
+      title: t("industry.spunbond.title"),
+      icon: "🏭",
+    },
+    {
+      id: 17,
+      title: t("industry.cigarette.title"),
+      icon: "🚬",
+    },
+    {
+      id: 18,
+      title: t("industry.printing.title"),
+      icon: "🖨️",
+    },
+    {
+      id: 19,
+      title: t("industry.toys.title"),
+      icon: "🧸",
+    },
+    {
+      id: 20,
+      title: t("industry.plastic.title"),
+      icon: "🏭",
+    },
+    {
+      id: 21,
+      title: t("industry.coffee.title"),
+      icon: "☕",
+    },
+    {
+      id: 22,
+      title: t("industry.sparepart.title"),
+      icon: "🚛",
+    },
+    {
+      id: 23,
+      title: t("industry.cake.title"),
+      icon: "🍰",
+    },
+    {
+      id: 24,
+      title: t("industry.motorcycle.title"),
+      icon: "🏍️",
+    },
+    {
+      id: 25,
+      title: t("industry.oil.title"),
+      icon: "🛢️",
+    },
+    {
+      id: 26,
+      title: t("industry.furniture.title"),
+      icon: "🪑",
+    },
+    {
+      id: 27,
+      title: t("industry.wood.title"),
+      icon: "🪵",
+    },
+    {
+      id: 28,
+      title: t("industry.cargo.title"),
+      icon: "🚢",
+    },
+    {
+      id: 29,
+      title: t("industry.church.title"),
+      icon: "⛪",
+    },
+    {
+      id: 30,
+      title: t("industry.flour.title"),
+      icon: "🌾",
+    },
+    {
+      id: 31,
+      title: t("industry.tire.title"),
+      icon: "🛞",
+    },
+    {
+      id: 32,
+      title: t("industry.bike.title"),
+      icon: "🚲",
+    },
+    {
+      id: 33,
+      title: t("industry.chemical.material.title"),
+      icon: "🧪",
+    },
+    {
+      id: 34,
+      title: t("industry.property.title"),
+      icon: "🏢",
+    },
+  ];
 
   // const teamMembers = [
   //   {

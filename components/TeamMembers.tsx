@@ -8,7 +8,7 @@ import { getTeamMembers } from "@/data/teamData";
 export default function TeamMembers() {
   const { t } = useLanguage();
   const [expandedId, setExpandedId] = useState<number | null>(null);
-  
+
   const teamMembers = getTeamMembers(t);
 
   return (
@@ -56,7 +56,7 @@ export default function TeamMembers() {
                   <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
-                  
+
                   {/* Description with View More */}
                   <div className="relative">
                     <p

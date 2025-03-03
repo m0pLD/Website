@@ -242,7 +242,8 @@ const translations = {
 
     // Experience Section
     "experience.title": "Pengalaman Kami",
-    "experience.subtitle": "Dengan pengalaman bertahun-tahun di berbagai industri, kami menyediakan layanan komprehensif yang disesuaikan untuk memenuhi kebutuhan bisnis Anda",
+    "experience.subtitle":
+      "Dengan pengalaman bertahun-tahun di berbagai industri, kami menyediakan layanan komprehensif yang disesuaikan untuk memenuhi kebutuhan bisnis Anda",
     "experience.years": "Tahun",
     "experience.clients": "Klien",
     "experience.projects": "Proyek",
@@ -310,6 +311,81 @@ const translations = {
 
     "team.member.arin.description":
       "Spesialis dalam menganalisis informasi keuangan dan menyiapkan laporan untuk memandu manajemen dalam membuat keputusan bisnis strategis. Fokus pada penganggaran, manajemen biaya, evaluasi kinerja, dan peramalan keuangan untuk membantu meningkatkan efisiensi operasional dan profitabilitas. Memberikan wawasan untuk organisasi dalam mencapai tujuan keuangannya secara efektif.",
+
+    // Join Companies Section
+    "join.title": "Bergabung dengan 100+ Perusahaan yang Berkembang",
+    "join.description":
+      "Kami menyediakan layanan pajak dan konsultasi, baik secara individual maupun terpadu, memberikan layanan multi-disiplin yang konsisten secara global dan kemampuan berdasarkan pengetahuan industri yang luas, untuk semua klien nasional dan internasional kami.",
+    "join.cta": "Mulai Sekarang",
+
+    // Industries Section
+    "industry.mining.title": "Industri Pertambangan",
+    "industry.chemical.title": "Industri Kimia",
+    "industry.energy.title": "Industri Energi",
+    "industry.agriculture.title": "Industri Pertanian",
+    "industry.stationery.title": "Perdagangan dan Manufaktur Alat Tulis",
+    "industry.trading.title": "Perusahaan Perdagangan Umum",
+    "industry.footwear.title": "Manufaktur Alas Kaki",
+    "industry.holding.title": "Perusahaan Induk",
+    "industry.alloy.title": "Manufaktur Velg Alloy",
+    "industry.construction.title": "Konstruksi",
+    "industry.building.title": "Distributor Bahan Bangunan",
+    "industry.ink.title": "Distributor Tinta",
+    "industry.school.title": "Sekolah",
+    "industry.packaging.title": "Manufaktur Kemasan Fleksibel",
+    "industry.supermarket.title": "Supermarket Bahan Bangunan",
+    "industry.spunbond.title": "Manufaktur Spunbond",
+    "industry.cigarette.title": "Distributor Rokok",
+    "industry.printing.title": "Perusahaan Percetakan",
+    "industry.toys.title": "Importir Mainan",
+    "industry.plastic.title": "Manufaktur Cetakan Injeksi Plastik",
+    "industry.coffee.title": "Manufaktur Kopi",
+    "industry.sparepart.title":
+      "Distributor Suku Cadang Kendaraan dan Alat Berat",
+    "industry.cake.title": "Distributor Bahan Kue",
+    "industry.motorcycle.title": "Distributor Sepeda Motor",
+    "industry.oil.title": "Distributor Minyak dan Aspal",
+    "industry.furniture.title": "Manufaktur dan Eksportir Furnitur",
+    "industry.wood.title": "Manufaktur Pengeringan Kayu",
+    "industry.cargo.title": "Jasa Ekspedisi Kargo Kapal",
+    "industry.church.title": "Organisasi Non-profit (Gereja)",
+    "industry.flour.title": "Manufaktur Tepung",
+    "industry.tire.title": "Manufaktur Lapisan Ban",
+    "industry.bike.title": "Manufaktur Sepeda",
+    "industry.chemical.material.title": "Manufaktur Bahan Kimia",
+    "industry.property.title": "Properti",
+
+    // Mining Industry Items
+    "industry.mining.items.coal": "Tambang Batubara",
+    "industry.mining.items.gold": "Tambang Emas",
+    "industry.mining.items.nickel": "Tambang Nikel",
+    "industry.mining.items.mineral": "Tambang Mineral",
+    "industry.mining.items.service": "Jasa Pertambangan",
+    "industry.mining.items.contractor": "Kontraktor Pertambangan",
+
+    // Chemical Industry Items
+    "industry.chemical.items.petrochemical": "Petrokimia",
+    "industry.chemical.items.basic": "Kimia Dasar",
+    "industry.chemical.items.plastic": "Plastik & Kemasan",
+    "industry.chemical.items.paint": "Cat & Coating",
+    "industry.chemical.items.fertilizer": "Pupuk & Pestisida",
+    "industry.chemical.items.oleochemical": "Oleokimia",
+
+    // Energy Industry Items
+    "industry.energy.items.powerplant": "Pembangkit Listrik",
+    "industry.energy.items.oil": "Minyak & Gas",
+    "industry.energy.items.renewable": "Energi Terbarukan",
+    "industry.energy.items.distribution": "Distribusi Energi",
+    "industry.energy.items.transmission": "Transmisi Listrik",
+    "industry.energy.items.contractor": "Kontraktor Power Plant",
+
+    // Agriculture Industry Items
+    "industry.agriculture.items.plantation": "Perkebunan",
+    "industry.agriculture.items.agribusiness": "Agribisnis",
+    "industry.agriculture.items.processing": "Pengolahan Hasil Pertanian",
+    "industry.agriculture.items.farm": "Peternakan",
+    "industry.agriculture.items.fishery": "Perikanan",
+    "industry.agriculture.items.food": "Industri Pangan",
   },
   en: {
     // Navbar
@@ -537,7 +613,8 @@ const translations = {
 
     // Experience Section
     "experience.title": "Our Experience",
-    "experience.subtitle": "With years of experience in various industries, we provide comprehensive services tailored to meet your business needs",
+    "experience.subtitle":
+      "With years of experience in various industries, we provide comprehensive services tailored to meet your business needs",
     "experience.years": "Years",
     "experience.clients": "Clients",
     "experience.projects": "Projects",
@@ -605,6 +682,81 @@ const translations = {
 
     "team.member.arin.description":
       "Specialized in analyzing financial information and preparing reports to guide management in making strategic business decisions. Focus on budgeting, cost management, performance evaluation, and financial forecasting to help improve operational efficiency and profitability. Supporting insight for the organization in achieving its financial goals effectively.",
+
+    // Join Companies Section
+    "join.title": "Join with 100+ Growing Companies",
+    "join.description":
+      "We provide tax and Advisory services, individually or on a combined basis, delivering globally consistent multi-disciplinary skills and capabilities, based on extensive industry knowledge, to all of our national and international clients.",
+    "join.cta": "Get Started Now",
+
+    // Industries Section
+    "industry.mining.title": "Mining Industry",
+    "industry.chemical.title": "Chemical Industry",
+    "industry.energy.title": "Energy Industry",
+    "industry.agriculture.title": "Agriculture Industry",
+    "industry.stationery.title": "Stationery Trading and Manufacturing",
+    "industry.trading.title": "General Trading Company",
+    "industry.footwear.title": "Footwear Manufacturing",
+    "industry.holding.title": "Holding Company",
+    "industry.alloy.title": "Alloy Wheel Manufacturing",
+    "industry.construction.title": "Construction",
+    "industry.building.title": "Building Material Distributor",
+    "industry.ink.title": "Ink Distributor",
+    "industry.school.title": "School",
+    "industry.packaging.title": "Flexible Packaging Manufacturing",
+    "industry.supermarket.title": "Building Material Supermarket",
+    "industry.spunbond.title": "Spunbond Manufacturing",
+    "industry.cigarette.title": "Cigarette Distributor",
+    "industry.printing.title": "Printing Company",
+    "industry.toys.title": "Toys Importer",
+    "industry.plastic.title": "Plastic Injection Molding Manufacturing",
+    "industry.coffee.title": "Coffee Manufacturing",
+    "industry.sparepart.title":
+      "Vehicle and Heavy Equipment Sparepart Distributor",
+    "industry.cake.title": "Cake Ingredients Distributor",
+    "industry.motorcycle.title": "Motorcycle Distributor",
+    "industry.oil.title": "Oil and Asphalt Distributor",
+    "industry.furniture.title": "Furniture Manufacturing and Exportir",
+    "industry.wood.title": "Wood Drying Manufacturing",
+    "industry.cargo.title": "Ship Cargo Expedition Service",
+    "industry.church.title": "Non-profit Organization (Church)",
+    "industry.flour.title": "Flour Manufacturing",
+    "industry.tire.title": "Tire Lining Manufacturing",
+    "industry.bike.title": "Bike Manufacturing",
+    "industry.chemical.material.title": "Chemical Material Manufacturing",
+    "industry.property.title": "Property",
+
+    // Mining Industry Items
+    "industry.mining.items.coal": "Coal Mining",
+    "industry.mining.items.gold": "Gold Mining",
+    "industry.mining.items.nickel": "Nickel Mining",
+    "industry.mining.items.mineral": "Mineral Mining",
+    "industry.mining.items.service": "Mining Services",
+    "industry.mining.items.contractor": "Mining Contractor",
+
+    // Chemical Industry Items
+    "industry.chemical.items.petrochemical": "Petrochemical",
+    "industry.chemical.items.basic": "Basic Chemicals",
+    "industry.chemical.items.plastic": "Plastic & Packaging",
+    "industry.chemical.items.paint": "Paint & Coating",
+    "industry.chemical.items.fertilizer": "Fertilizer & Pesticide",
+    "industry.chemical.items.oleochemical": "Oleochemical",
+
+    // Energy Industry Items
+    "industry.energy.items.powerplant": "Power Plant",
+    "industry.energy.items.oil": "Oil & Gas",
+    "industry.energy.items.renewable": "Renewable Energy",
+    "industry.energy.items.distribution": "Energy Distribution",
+    "industry.energy.items.transmission": "Power Transmission",
+    "industry.energy.items.contractor": "Power Plant Contractor",
+
+    // Agriculture Industry Items
+    "industry.agriculture.items.plantation": "Plantation",
+    "industry.agriculture.items.agribusiness": "Agribusiness",
+    "industry.agriculture.items.processing": "Agricultural Processing",
+    "industry.agriculture.items.farm": "Livestock Farming",
+    "industry.agriculture.items.fishery": "Fishery",
+    "industry.agriculture.items.food": "Food Industry",
   },
 };
 

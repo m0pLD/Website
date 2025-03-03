@@ -31,7 +31,7 @@ export default function JoinCompanies() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-3xl md:text-4xl font-bold mb-4 text-white"
             >
-              Join with 100+ Growing Companies
+              {t("join.title")}
             </motion.h2>
 
             <motion.p
@@ -41,10 +41,7 @@ export default function JoinCompanies() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-white/90 leading-relaxed"
             >
-              We provide tax and Advisory services, individually or on a
-              combined basis, delivering globally consistent multi-disciplinary
-              skills and capabilities, based on extensive industry knowledge, to
-              all of our national and international clients.
+              {t("join.description")}
             </motion.p>
           </div>
 
@@ -60,7 +57,7 @@ export default function JoinCompanies() {
               href="/contact"
               className="inline-flex items-center px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 transition-all duration-300 group whitespace-nowrap shadow-xl"
             >
-              Get Started Now
+              {t("join.cta")}
               <svg
                 className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
                 fill="none"
